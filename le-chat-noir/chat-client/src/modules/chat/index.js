@@ -22,10 +22,10 @@ export const connectChat = () => ({type: CONNECT_CHAT});
 export const disconnectChat = () => ({type: DISCONNECT_CHAT});
 
 // SELECTOR
-const getChat = state => state.chat;
-export const getChatStatus = createSelector([getChat], chat => chat.status);
-export const getChatUser = createSelector([getChat], chat => chat.user);
-export const getChatServer = createSelector([getChat], chat => chat.server);
+const getRoot = state => state.chat;
+export const getChatStatus = createSelector([getRoot], chat => chat.status);
+export const getChatUser = createSelector([getRoot], chat => chat.user);
+export const getChatServer = createSelector([getRoot], chat => chat.server);
 
 // REDUCER
 const initialState = {
