@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Message from './Message';
 
 const Messages = ({messages}) => (
-    <div>
+    <div style={{backgroundColor:'black', color: '#f4c56d', width: '100%', flex: '3'}}>
         { 
             messages.map(({sender, text, date}) => <Message key={sender+date} text={text} sender={sender} date={date} />)
         }

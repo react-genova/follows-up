@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const MessageSender = ({text, onTextChange, onSend}) => (
-    <div>
+    <div style={{flex: '1'}}>
         <input type="text" value={text} onChange={onTextChange} />
         <button onClick={onSend}>Send</button>
     </div>
