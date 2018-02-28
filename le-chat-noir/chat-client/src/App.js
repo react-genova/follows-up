@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <div style={{width: '40%', flex: '1', height: '200px', maxHeight: '600px'}}>
+          <div style={{display: 'flex', flexDirection: 'column', width: '40%', flex: '1', padding: '50px 0px'}}>
             <ChatPanel />
             <Messages />
             <MessageSender />

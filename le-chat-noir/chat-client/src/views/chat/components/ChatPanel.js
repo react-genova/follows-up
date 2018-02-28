@@ -14,7 +14,7 @@ const getStatusComponent = (status, onConnect, onDisconnect) => {
 }; 
 
 const ChatPanel = ({user, status, onUserChange, onConnect, onDisconnect}) => (
-    <div style={{paddingBottom: '10px', display: 'flex', flexDirection: 'row'}}>
+    <div style={{flex: '-1', paddingBottom: '10px', display: 'flex', flexDirection: 'row'}}>
         {
             status===Chat.CHAT_STATUS_DISCONNECTED
             ? <UserInput user={user} onUserChange={onUserChange} />
