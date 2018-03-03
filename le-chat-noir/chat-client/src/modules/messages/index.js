@@ -3,7 +3,7 @@ import { createSelector } from 'reselect';
 // ACTIONS
 export const ADD_MESSAGE = 'ADD_MESSAGE@messages';
 export const SEND_MESSAGE = 'SEND_MESSAGE@messages';
-export const addMessage = (text, sender, date) => ({
+export const addMessage = ({text, sender, date}) => ({
     type: ADD_MESSAGE,
     payload: { text, sender, date }
 });

@@ -1,0 +1,16 @@
+{
+  "name": "chat-server-nodejs",
+  "version": "1.0.0",
+  "description": "A simple Node.js server for a web chat",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node src/index.js"
+  },
+  "author": "andrea.briozzo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "websocket": "^1.0.25"
+  }
+}

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import MessageSender from '../components/MessageSender';
 import { getChatUser } from '../../../modules/chat';
-import { addMessage } from '../../../modules/messages';
+import { sendMessage } from '../../../modules/messages';
 
 class MessageSenderContainer extends Component {
     state = {
@@ -38,4 +38,4 @@ const mapStateToProps = state => ({
 });
 
 export { MessageSenderContainer };
-export default connect(mapStateToProps, { sendMessage: addMessage })(MessageSenderContainer);
+export default connect(mapStateToProps, { sendMessage })(MessageSenderContainer);
