@@ -5,7 +5,6 @@ import ChatPanel from '../components/ChatPanel';
 import { 
     changeChatStatus, disconnectChat, connectChat, 
     getChatServer, getChatStatus, getChatUser,
-    CHAT_STATUS_CONNECTED 
 } from '../../../modules/chat';
 
 class ChatPanelContainer extends Component {
@@ -16,9 +15,8 @@ class ChatPanelContainer extends Component {
     }
 
     connect = () => {
-        const { connectChat, user, changeChatStatus } = this.props;
+        const { connectChat } = this.props;
         connectChat();
-        setTimeout(()=>changeChatStatus(CHAT_STATUS_CONNECTED, user), 2000);
     }
 
     disconnect = () => {

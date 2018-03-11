@@ -6,37 +6,23 @@ const socket$ = Observable.webSocket(
     "ws://localhost:11235"
 );
 
-const webSockectConnectionEpic = (action$, {getState}) =>
-    action$.ofType(CONNECT_CHAT)
-        .switchMap(action =>
+const webSockectMessageEpic = (action$, {getState}) =>
+    action$
+        .ofType(CONNECT_CHAT)
+        .switchMap(() => 
             socket$
-                .map(payload => {
-                    console.log("RECEIVED MESSAGE:", JSON.parse(payload))
-                    return addMessage(JSON.parse(payload))
-                })
+                .map(payload => addMessage(JSON.parse(payload)))
                 .takeUntil(action$.ofType(DISCONNECT_CHAT))
-        )
-        .map(a => {
-            console.log("^^^^^^^^^^^^^^^^", a)
-            return a;
-        })
-        /*.mergeMap(action => {
-            console.log("MAP TO", action)
-            return changeChatStatus(CHAT_STATUS_CONNECTED, getChatUser(getState()))
-        })*/
+                .startWith(changeChatStatus(CHAT_STATUS_CONNECTED, getChatUser(getState())))
+                .merge(
+                    action$
+                        .ofType(SEND_MESSAGE)
+                        .mergeMap(action => {
+                            const mess = { ...action.payload, date: new Date().getTime() };
+                            socket$.next(JSON.stringify(mess))
+                            return Observable.empty();
+                        })
+                )
+        );
 
-const webSockectMessageEpic = (action$, store) =>
-    action$.ofType(SEND_MESSAGE)
-        .mergeMap(action => {
-            console.log("THE OTHER ONE1", action)
-            const mess = {
-                ...action.payload,
-                date: new Date().getTime()
-            };
-            socket$.next(JSON.stringify(mess))
-            console.log("THE OTHER ONE2", mess)
-            return socket$;
-        })
-        .map(a => ({ type: 'NULL' }))
-
-export { webSockectConnectionEpic, webSockectMessageEpic };
+export default webSockectMessageEpic;
