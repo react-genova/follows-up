@@ -8,3 +8,4 @@ When you study, write down notes and maybe also something more, like entire proj
 ## Subjects
 
  1. [Le Chat Noir](./le-chat-noir) : the classic client/server simple chat application (React, Redux, RxJS, redux-observable, Node.js)
+ 2. [Canvas Freehand Drawing](./canvas-mouse-drawing) : freehand drawing (and erasing) over canvas within React
