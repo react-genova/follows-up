@@ -1,0 +1,2 @@
+export const MOVING_SYMBOL_X = 'MOVING_SYMBOL_X';
+export const MOVING_SYMBOL_O = 'MOVING_SYMBOL_O';
