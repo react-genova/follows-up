@@ -4,6 +4,7 @@ import * as SIGNS from '../../modules/types/signs.constants';
 import SignContainer from './Signs.styled';
 import SignO from './SignO';
 import SignX from './SignX';
+import { playingTypePropTypes } from '../grid/Grid.types';
 
 class Sign extends PureComponent {
     constructor(props) {
@@ -11,26 +12,29 @@ class Sign extends PureComponent {
 
         this.state = {
             hover: false,
-        }
+        };
     }
 
     onMouseEnter = () => this.setState({ hover: true });
 
     onMouseLeave = () => this.setState({ hover: false });
 
-    onClick = () => this.props.onClick(this.props.type);
+    onClickCallback = () => {
+        const { onClick, type } = this.props;
+        onClick(type);
+    }
 
     render() {
         const { type, hasValue } = this.props;
         const { hover } = this.state;
         return (
-            <SignContainer onClick={this.onClick} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-            {
-                (hasValue || hover) && {
-                    [SIGNS.SIGN_O]: <SignO ghost={!hasValue} />,
-                    [SIGNS.SIGN_X]: <SignX ghost={!hasValue} />,
-                }[type]
-            }
+            <SignContainer onClick={this.onClickCallback} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
+                {
+                    (hasValue || hover) && {
+                        [SIGNS.SIGN_O]: <SignO ghost={!hasValue} />,
+                        [SIGNS.SIGN_X]: <SignX ghost={!hasValue} />,
+                    }[type]
+                }
             </SignContainer>
         );
     }
@@ -39,7 +43,7 @@ class Sign extends PureComponent {
 Sign.propTypes = {
     hasValue: PropTypes.bool,
     onClick: PropTypes.func,
-    type: PropTypes.oneOf([SIGNS.SIGN_O, SIGNS.SIGN_X]),
+    type: playingTypePropTypes,
 };
 
 Sign.defaultProps = {
