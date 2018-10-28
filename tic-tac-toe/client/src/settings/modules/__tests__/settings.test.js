@@ -22,6 +22,7 @@ describe('Settings reducer', () => {
             name: NAME1,
             symbol: MOVING_SYMBOL_X,
             type: PLAYER_TYPE_MACHINE,
+            ready: true,
         }));
         expect(stateAfter.get('player2')).toEqualImmutable(stateBefore.get('player2'));
     });
@@ -35,6 +36,7 @@ describe('Settings reducer', () => {
             name: NAME2,
             symbol: MOVING_SYMBOL_O,
             type: PLAYER_TYPE_HUMAN,
+            ready: true,
         }));
         expect(stateAfter.get('player1')).toEqualImmutable(stateBefore.get('player1'));
     });
@@ -51,11 +53,13 @@ describe('Settings reducer', () => {
             name: NAME1,
             symbol: MOVING_SYMBOL_X,
             type: PLAYER_TYPE_MACHINE,
+            ready: true,
         });
         const player2 = new PlayerRecord({
             name: NAME2,
             symbol: MOVING_SYMBOL_O,
             type: PLAYER_TYPE_HUMAN,
+            ready: true,
         });
         expect(stateAfter).toEqualImmutable(new SettingsRecord({
             player1,

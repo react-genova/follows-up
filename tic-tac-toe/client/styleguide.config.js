@@ -1,7 +1,12 @@
 module.exports = {
+    title: 'Tic Tac Toe components',
     sections: [
         {
-            name: 'Components',
+            name: 'Settings',
+            components: 'src/settings/**/components/**/*.jsx',
+        },
+        {
+            name: 'Board',
             components: 'src/board/**/components/**/*.jsx',
         },
     ],

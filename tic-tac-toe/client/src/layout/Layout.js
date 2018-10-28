@@ -6,7 +6,8 @@ const Layout = styled.div`
     background-color: #333;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-direction: column;
 `;
 
 export default Layout;

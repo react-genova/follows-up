@@ -1,5 +1,5 @@
 export const makeARandomMove = (values) => {
-    const availables = values.reduce((acc, { value, valid}, index) => {
+    const availables = values.reduce((acc, { value, valid }, index) => {
         if (!valid) acc.push({ value, index });
         return acc;
     }, []);
@@ -9,3 +9,5 @@ export const makeARandomMove = (values) => {
     }
     return -1;
 };
+
+export const asyncDispatch = (dispatch, action) => setTimeout(() => dispatch(action), 300);

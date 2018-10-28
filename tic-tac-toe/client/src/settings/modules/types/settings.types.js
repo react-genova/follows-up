@@ -6,7 +6,7 @@ export const PlayerRecord = Record({
     name: 'player',
     type: PLAYER_TYPE_MACHINE,
     symbol: MOVING_SYMBOL_O,
-    ready: true,
+    ready: false,
 });
 
 export const SettingsRecord = Record({

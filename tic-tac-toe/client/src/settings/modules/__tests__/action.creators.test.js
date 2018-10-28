@@ -12,6 +12,7 @@ describe('Settings action creators', () => {
                 name: 'Bowman',
                 symbol: MOVING_SYMBOL_O,
                 type: PLAYER_TYPE_HUMAN,
+                ready: true,
             },
         });
     });
@@ -24,6 +25,7 @@ describe('Settings action creators', () => {
                 name: 'HAL9000',
                 symbol: MOVING_SYMBOL_X,
                 type: PLAYER_TYPE_MACHINE,
+                ready: true,
             },
         });
     });
@@ -37,11 +39,13 @@ describe('Settings action creators', () => {
                     name: 'Professor Falken',
                     symbol: MOVING_SYMBOL_O,
                     type: PLAYER_TYPE_HUMAN,
+                    ready: true,
                 },
                 player2: {
                     name: 'Joshua',
                     symbol: MOVING_SYMBOL_X,
                     type: PLAYER_TYPE_MACHINE,
+                    ready: true,
                 },
             },
         });

@@ -4,7 +4,7 @@ import {
     getPlayer1Symbol, getPlayer1Type, getPlayer2Type, getPlayer2Symbol,
 } from '../../../settings/modules/selectors';
 import { getBoardValues } from '../../../board/modules/selectors';
-import { makeARandomMove } from '../machinebotMiddleware.unsafe';
+import { makeARandomMove, asyncDispatch } from '../machinebotMiddleware.unsafe';
 import { addBoardMove } from '../../../board/modules/action.creators';
 import { MOVING_SYMBOL_O, MOVING_SYMBOL_X } from '../../../settings/modules/types/moving.symbols.constants';
 import { PLAYER_TYPE_HUMAN, PLAYER_TYPE_MACHINE } from '../../../settings/modules/types/player.types.constants';
@@ -58,7 +58,7 @@ describe('Machine bot middleware', () => {
     it('generates a move when it is the machine round (p1 machine)', () => {
         const NEXT_MOVE = 1;
         const next = jest.fn();
-        const store = { getState: jest.fn() };
+        const store = { getState: jest.fn(), dispatch: jest.fn() };
         const action = addBoardMove(0, MOVING_SYMBOL_O);
         getPlayer1Type.mockImplementation(() => PLAYER_TYPE_MACHINE);
         getPlayer1Symbol.mockImplementation(() => MOVING_SYMBOL_X);
@@ -66,18 +66,19 @@ describe('Machine bot middleware', () => {
         getPlayer2Symbol.mockImplementation(() => MOVING_SYMBOL_O);
         getBoardValues.mockImplementation(() => []);
         makeARandomMove.mockImplementation(() => NEXT_MOVE);
+        asyncDispatch.mockImplementation(() => null);
         // executing
         middleware(store)(next)(action);
         // checking results
-        expect(next).toHaveBeenCalledTimes(2);
+        expect(next).toHaveBeenCalledTimes(1);
         expect(next).toHaveBeenCalledWith(action);
-        expect(next).toHaveBeenCalledWith(addBoardMove(NEXT_MOVE, MOVING_SYMBOL_X));
+        expect(asyncDispatch).toHaveBeenCalledWith(store.dispatch, addBoardMove(NEXT_MOVE, MOVING_SYMBOL_X));
     });
 
     it('generates a move when it is the machine round (p2 machine)', () => {
         const NEXT_MOVE = 1;
         const next = jest.fn();
-        const store = { getState: jest.fn() };
+        const store = { getState: jest.fn(), dispatch: jest.fn() };
         const action = addBoardMove(0, MOVING_SYMBOL_X);
         getPlayer1Type.mockImplementation(() => PLAYER_TYPE_HUMAN);
         getPlayer1Symbol.mockImplementation(() => MOVING_SYMBOL_X);
@@ -85,11 +86,12 @@ describe('Machine bot middleware', () => {
         getPlayer2Symbol.mockImplementation(() => MOVING_SYMBOL_O);
         getBoardValues.mockImplementation(() => []);
         makeARandomMove.mockImplementation(() => NEXT_MOVE);
+        asyncDispatch.mockImplementation(() => null);
         // executing
         middleware(store)(next)(action);
         // checking results
-        expect(next).toHaveBeenCalledTimes(2);
+        expect(next).toHaveBeenCalledTimes(1);
         expect(next).toHaveBeenCalledWith(action);
-        expect(next).toHaveBeenCalledWith(addBoardMove(NEXT_MOVE, MOVING_SYMBOL_O));
+        expect(asyncDispatch).toHaveBeenCalledWith(store.dispatch, addBoardMove(NEXT_MOVE, MOVING_SYMBOL_O));
     });
 });

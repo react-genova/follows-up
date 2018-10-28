@@ -6,6 +6,7 @@ export const updatePlayer1 = (type, symbol, name) => ({
         name,
         symbol,
         type,
+        ready: true,
     },
 });
 
@@ -15,6 +16,7 @@ export const updatePlayer2 = (type, symbol, name) => ({
         name,
         symbol,
         type,
+        ready: true,
     },
 });
 
@@ -25,11 +27,13 @@ export const updatePlayers = (type1, symbol1, name1, type2, symbol2, name2) => (
             name: name1,
             symbol: symbol1,
             type: type1,
+            ready: true,
         },
         player2: {
             name: name2,
             symbol: symbol2,
             type: type2,
+            ready: true,
         },
     },
 });
