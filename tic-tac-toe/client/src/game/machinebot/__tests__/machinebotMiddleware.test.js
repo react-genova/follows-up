@@ -6,6 +6,7 @@ import {
 import { getBoardValues } from '../../../board/modules/selectors';
 import { makeARandomMove, asyncDispatch } from '../machinebotMiddleware.unsafe';
 import { addBoardMove } from '../../../board/modules/action.creators';
+import { updatePlayers } from '../../../settings/modules/action.creators';
 import { MOVING_SYMBOL_O, MOVING_SYMBOL_X } from '../../../settings/modules/types/moving.symbols.constants';
 import { PLAYER_TYPE_HUMAN, PLAYER_TYPE_MACHINE } from '../../../settings/modules/types/player.types.constants';
 
@@ -14,7 +15,10 @@ jest.mock('../../../board/modules/selectors');
 jest.mock('../machinebotMiddleware.unsafe');
 
 describe('Machine bot middleware', () => {
-    afterEach(cleanup);
+    afterEach(() => {
+        cleanup();
+        jest.clearAllMocks();
+    });
 
     it('operates only on ADD_BOARD_MOVE action', () => {
         const next = jest.fn();
@@ -93,5 +97,65 @@ describe('Machine bot middleware', () => {
         expect(next).toHaveBeenCalledTimes(1);
         expect(next).toHaveBeenCalledWith(action);
         expect(asyncDispatch).toHaveBeenCalledWith(store.dispatch, addBoardMove(NEXT_MOVE, MOVING_SYMBOL_O));
+    });
+
+    it('generates a move on game start with a p1 machine', () => {
+        const NEXT_MOVE = 1;
+        const next = jest.fn();
+        const store = { getState: jest.fn(), dispatch: jest.fn() };
+        const action = updatePlayers();
+        getPlayer1Type.mockImplementation(() => PLAYER_TYPE_MACHINE);
+        getPlayer1Symbol.mockImplementation(() => MOVING_SYMBOL_X);
+        getPlayer2Type.mockImplementation(() => PLAYER_TYPE_HUMAN);
+        getPlayer2Symbol.mockImplementation(() => MOVING_SYMBOL_O);
+        getBoardValues.mockImplementation(() => []);
+        makeARandomMove.mockImplementation(() => NEXT_MOVE);
+        asyncDispatch.mockImplementation(() => null);
+        // executing
+        middleware(store)(next)(action);
+        // checking results
+        expect(next).toHaveBeenCalledTimes(1);
+        expect(next).toHaveBeenCalledWith(action);
+        expect(asyncDispatch).toHaveBeenCalledWith(store.dispatch, addBoardMove(NEXT_MOVE, MOVING_SYMBOL_X));
+    });
+
+    it('does not generate a move on game start with a p1 human', () => {
+        const NEXT_MOVE = 1;
+        const next = jest.fn();
+        const store = { getState: jest.fn(), dispatch: jest.fn() };
+        const action = updatePlayers();
+        getPlayer1Type.mockImplementation(() => PLAYER_TYPE_HUMAN);
+        getPlayer1Symbol.mockImplementation(() => MOVING_SYMBOL_X);
+        getPlayer2Type.mockImplementation(() => PLAYER_TYPE_MACHINE);
+        getPlayer2Symbol.mockImplementation(() => MOVING_SYMBOL_O);
+        getBoardValues.mockImplementation(() => []);
+        makeARandomMove.mockImplementation(() => NEXT_MOVE);
+        asyncDispatch.mockImplementation(() => null);
+        // executing
+        middleware(store)(next)(action);
+        // checking results
+        expect(next).toHaveBeenCalledTimes(1);
+        expect(next).toHaveBeenCalledWith(action);
+        expect(asyncDispatch).toHaveBeenCalledTimes(0);
+    });
+
+    it('does not generate a move on game start when no moves are available (unreal situation)', () => {
+        const NEXT_MOVE = -1;
+        const next = jest.fn();
+        const store = { getState: jest.fn(), dispatch: jest.fn() };
+        const action = updatePlayers();
+        getPlayer1Type.mockImplementation(() => PLAYER_TYPE_MACHINE);
+        getPlayer1Symbol.mockImplementation(() => MOVING_SYMBOL_X);
+        getPlayer2Type.mockImplementation(() => PLAYER_TYPE_HUMAN);
+        getPlayer2Symbol.mockImplementation(() => MOVING_SYMBOL_O);
+        getBoardValues.mockImplementation(() => []);
+        makeARandomMove.mockImplementation(() => NEXT_MOVE);
+        asyncDispatch.mockImplementation(() => null);
+        // executing
+        middleware(store)(next)(action);
+        // checking results
+        expect(next).toHaveBeenCalledTimes(1);
+        expect(next).toHaveBeenCalledWith(action);
+        expect(asyncDispatch).toHaveBeenCalledTimes(0);
     });
 });

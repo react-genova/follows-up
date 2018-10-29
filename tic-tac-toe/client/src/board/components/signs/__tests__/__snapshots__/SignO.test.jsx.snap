@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignO component renders without crashing (ghost) 1`] = `
+<svg
+  height="100%"
+  viewBox="0 0 100 100"
+  width="100%"
+>
+  <ellipse
+    cx="50"
+    cy="50"
+    fill="transparent"
+    rx="46"
+    ry="46"
+    stroke="lightgray"
+    stroke-width="8"
+  />
+</svg>
+`;
+
+exports[`SignO component renders without crashing 1`] = `
+<svg
+  height="100%"
+  viewBox="0 0 100 100"
+  width="100%"
+>
+  <ellipse
+    cx="50"
+    cy="50"
+    fill="transparent"
+    rx="46"
+    ry="46"
+    stroke="yellow"
+    stroke-width="8"
+  />
+</svg>
+`;

@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignX component renders without crashing (ghost) 1`] = `
+<svg
+  height="100%"
+  viewBox="0 0 100 100"
+  width="100%"
+>
+  <line
+    stroke="lightgray"
+    stroke-width="8"
+    x1="0"
+    x2="100"
+    y1="0"
+    y2="100"
+  />
+  <line
+    stroke="lightgray"
+    stroke-width="8"
+    x1="0"
+    x2="100"
+    y1="100"
+    y2="0"
+  />
+</svg>
+`;
+
+exports[`SignX component renders without crashing 1`] = `
+<svg
+  height="100%"
+  viewBox="0 0 100 100"
+  width="100%"
+>
+  <line
+    stroke="cyan"
+    stroke-width="8"
+    x1="0"
+    x2="100"
+    y1="0"
+    y2="100"
+  />
+  <line
+    stroke="cyan"
+    stroke-width="8"
+    x1="0"
+    x2="100"
+    y1="100"
+    y2="0"
+  />
+</svg>
+`;
