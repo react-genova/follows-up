@@ -48,11 +48,16 @@ describe('Board conatiner', () => {
             { value: SIGN_X, valid: true },
             { value: SIGN_NONE, valid: false }
         ];
-        const { container, getByTestId } = render(
-            <BoardContainer data-testid="board-container" values={BOARD_VALUES} playingType={PLAYER_1_SYMBOL} addBoardMove={addBoardMove} />,
+        const addBoardMoveMocked = jest.fn();
+        const { container } = render(
+            <BoardContainer data-testid="board-container" values={BOARD_VALUES} playingType={PLAYER_1_SYMBOL} addBoardMove={addBoardMoveMocked} />,
         );
         expect(container.firstChild).toMatchSnapshot();
-        // fireEvent.click(getByTestId('board-container'));
-        // expect(addBoardMove).toHaveBeenCalledTimes(1);
+        // click on cell with valid value => no action fired
+        fireEvent.click(container.firstChild.firstChild.firstChild);
+        // click on cell with not valid value => action fired
+        fireEvent.click(container.firstChild.lastChild.firstChild);
+        expect(addBoardMoveMocked).toHaveBeenCalledTimes(1);
+        expect(addBoardMoveMocked).toHaveBeenCalledWith(3, PLAYER_1_SYMBOL);
     });
 });

@@ -21,7 +21,7 @@ PlayersSelector.propTypes = {
 };
 
 PlayersSelector.defaultProps = {
-    onClick: () => null,
+    onClick: undefined,
 };
 
 export default PlayersSelector;

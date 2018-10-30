@@ -8,6 +8,7 @@ import PlayersSelector from '../components/PlayersSelector';
 import { SIGN_O, SIGN_X } from '../../board/modules/types/signs.constants';
 import { PLAYER_TYPE_HUMAN, PLAYER_TYPE_MACHINE } from '../modules/types/player.types.constants';
 import { updatePlayers } from '../modules/action.creators';
+import { GameModeContainer, Separator } from './GameMode.styled';
 
 class GameMode extends Component {
     invokeUpdate = (player1type, player2type) => () => {
@@ -15,17 +16,10 @@ class GameMode extends Component {
         updatePlayersAction(player1type, SIGN_O, 'Player 1', player2type, SIGN_X, 'Player 2');
     }
 
-    onHumanVsMachineClick = this.invokeUpdate(PLAYER_TYPE_HUMAN, PLAYER_TYPE_MACHINE);
-
-    onMachineVsMachineClick = this.invokeUpdate(PLAYER_TYPE_MACHINE, PLAYER_TYPE_MACHINE);
-
-    // NOT IMPLEMENTED this.invokeUpdate(PLAYER_TYPE_HUMAN, PLAYER_TYPE_HUMAN);
-    onHumanVsHumanClick = () => null;
-
     render() {
         return (
-            <div style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <PlayersSelector onClick={this.onHumanVsMachineClick}>
+            <GameModeContainer>
+                <PlayersSelector onClick={this.invokeUpdate(PLAYER_TYPE_HUMAN, PLAYER_TYPE_MACHINE)}>
                     {
                         color => (
                             <Fragment>
@@ -36,8 +30,8 @@ class GameMode extends Component {
                         )
                     }
                 </PlayersSelector>
-                <div style={{ marginTop: '20px', width: '45em', height: '2px', backgroundColor: '#909090' }} />
-                <PlayersSelector onClick={this.onMachineVsMachineClick}>
+                <Separator />
+                <PlayersSelector onClick={this.invokeUpdate(PLAYER_TYPE_MACHINE, PLAYER_TYPE_MACHINE)}>
                     {
                         color => (
                             <Fragment>
@@ -48,8 +42,8 @@ class GameMode extends Component {
                         )
                     }
                 </PlayersSelector>
-                <div style={{ marginTop: '20px', width: '45em', height: '2px', backgroundColor: '#909090' }} />
-                <PlayersSelector onClick={this.onHumanVsHumanClick}>
+                <Separator />
+                <PlayersSelector onClick={() => null}>
                     {
                         color => (
                             <Fragment>
@@ -60,7 +54,7 @@ class GameMode extends Component {
                         )
                     }
                 </PlayersSelector>
-            </div>
+            </GameModeContainer>
         );
     }
 }
@@ -70,7 +64,7 @@ GameMode.propTypes = {
 };
 
 GameMode.defaultProps = {
-    updatePlayers: () => null,
+    updatePlayers: undefined,
 };
 
 const mapDispatchToProps = {

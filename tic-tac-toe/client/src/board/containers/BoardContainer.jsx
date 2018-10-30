@@ -29,7 +29,7 @@ BoardContainer.propTypes = {
 };
 
 BoardContainer.defaultProps = {
-    addBoardMove: () => null,
+    addBoardMove: undefined,
 };
 
 export const mapStateToProps = state => ({

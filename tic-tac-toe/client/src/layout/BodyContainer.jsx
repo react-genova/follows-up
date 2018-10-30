@@ -25,7 +25,7 @@ BodyContainer.defaultProps = {
     playersReady: false,
 };
 
-const mapStatetoProps = state => ({
+export const mapStatetoProps = state => ({
     playersReady: getPlayer1Ready(state) && getPlayer2Ready(state),
 });
 

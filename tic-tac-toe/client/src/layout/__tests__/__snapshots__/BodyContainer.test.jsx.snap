@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BodyContainer component renders without crashing (playersReady) 1`] = `
+<div
+  class="sc-bdVaJa eWPndX"
+>
+  BOARD
+</div>
+`;
+
+exports[`BodyContainer component renders without crashing 1`] = `GAMEMODE`;
