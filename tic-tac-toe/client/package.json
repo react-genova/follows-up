@@ -5,8 +5,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "immutable": "^3.8.2",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "react": "^16.7.0-alpha.0",
+    "react-dom": "^16.7.0-alpha.0",
     "react-redux": "^5.1.0",
     "react-scripts": "2.0.5",
     "redux": "^4.0.1",
@@ -27,6 +27,9 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "jest": {
+    "collectCoverageFrom": ["src/**/*.{js,jsx}", "!src/index.js"]
+  },  
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -37,6 +40,7 @@
     "ajv": "^6.0.0",
     "axios-mock-adapter": "^1.15.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-react-hooks": "0.0.0",
     "jest-dom": "^2.1.0",
     "jest-immutable-matchers": "^2.0.1",
     "react-styleguidist": "^8.0.2",
