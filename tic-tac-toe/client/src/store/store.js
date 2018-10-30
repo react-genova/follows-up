@@ -6,9 +6,10 @@ import settings from '../settings/modules/settings';
 import { setSettingsRoot } from '../settings/modules/selectors';
 import board from '../board/modules/board';
 import { setBoardRoot } from '../board/modules/selectors';
+import setRootFactory from './store.utils';
 
-setSettingsRoot(state => state.get('settings'));
-setBoardRoot(state => state.get('board'));
+setSettingsRoot(setRootFactory('settings'));
+setBoardRoot(setRootFactory('board'));
 
 const reducers = combineReducers({ settings, board });
 

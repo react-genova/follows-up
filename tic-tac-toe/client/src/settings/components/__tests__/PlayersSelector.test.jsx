@@ -10,7 +10,7 @@ describe('PlayersSelector component', () => {
         const { container } = render(<PlayersSelector>{() => null}</PlayersSelector>);
         expect(container.firstChild).toMatchSnapshot();
     });
-// '#E0E0E0' : '#909090'
+
     it('invokes child as function with #E0E0E0 on mount', () => {
         const CHILDREN = jest.fn();
         render(<PlayersSelector>{CHILDREN}</PlayersSelector>);
@@ -21,8 +21,10 @@ describe('PlayersSelector component', () => {
     it('invokes child as function with #E0E0E0 on mount', () => {
         const CHILDREN = jest.fn();
         const onClick = jest.fn();
-        const { container } = render(<PlayersSelector onClick={onClick}>{CHILDREN}</PlayersSelector>);
-        
+        const { container } = render(
+            <PlayersSelector onClick={onClick}>{CHILDREN}</PlayersSelector>
+        );
+
         fireEvent.click(container.firstChild);
         expect(onClick).toHaveBeenCalledTimes(1);
 

@@ -2,7 +2,7 @@ import { List } from 'immutable';
 import * as matchers from 'jest-immutable-matchers';
 import { initialBoardState } from '../types/board.types';
 import { SIGN_NONE, SIGN_X } from '../types/signs.constants';
-import { addBoardMove } from '../action.creators.js';
+import { addBoardMove } from '../action.creators';
 import board from '../board';
 
 describe('Board reducer', () => {
