@@ -11,10 +11,10 @@ const GridCell = ({
     playingType,
     onClick,
 }) => (
-        <Cell>
-            <Sign hasValue={valid} type={valid ? value : playingType} onClick={() => onClick(index)} />
-        </Cell>
-    );
+    <Cell>
+        <Sign hasValue={valid} type={valid ? value : playingType} onClick={() => onClick(index)} />
+    </Cell>
+);
 
 GridCell.propTypes = {
     value: valuePropTypes.isRequired,
