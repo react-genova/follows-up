@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { GridContainer, Cell } from './Grid.styled';
-import Sign from '../signs/Sign';
+import { GridContainer } from './Grid.styled';
 import { playingTypePropTypes, valuesPropTypes } from './Grid.types';
+import GridCell from './GridCell';
 
 const getIndex = index => index;
 
@@ -10,9 +10,15 @@ const Grid = ({ values, playingType, onCellClick }) => (
     <GridContainer>
         {
             values.map(({ value, valid }, index) => (
-                <Cell key={getIndex(index)}>
-                    <Sign hasValue={valid} type={valid ? value : playingType} onClick={() => onCellClick(index)} />
-                </Cell>))
+                <GridCell
+                    key={getIndex(index)}
+                    valid={valid}
+                    value={value}
+                    index={index}
+                    playingType={playingType}
+                    onClick={onCellClick}
+                />
+            ))
         }
     </GridContainer>
 );
@@ -24,7 +30,7 @@ Grid.propTypes = {
 };
 
 Grid.defaultProps = {
-    onCellClick: () => null,
+    onCellClick: undefined,
 };
 
 export default Grid;

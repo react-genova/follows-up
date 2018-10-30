@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid component renders without crashing 1`] = `
+<div
+  class="sc-bdVaJa cpgzAv"
+>
+  <div
+    class="sc-bwzfXH cZlmOf"
+  >
+    <div
+      class="sc-htpNat emEaka"
+    >
+      <svg
+        height="100%"
+        viewBox="0 0 100 100"
+        width="100%"
+      >
+        <ellipse
+          cx="50"
+          cy="50"
+          fill="transparent"
+          rx="46"
+          ry="46"
+          stroke="yellow"
+          stroke-width="8"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    class="sc-bwzfXH cZlmOf"
+  >
+    <div
+      class="sc-htpNat emEaka"
+    >
+      <svg
+        height="100%"
+        viewBox="0 0 100 100"
+        width="100%"
+      >
+        <line
+          stroke="cyan"
+          stroke-width="8"
+          x1="0"
+          x2="100"
+          y1="0"
+          y2="100"
+        />
+        <line
+          stroke="cyan"
+          stroke-width="8"
+          x1="0"
+          x2="100"
+          y1="100"
+          y2="0"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    class="sc-bwzfXH cZlmOf"
+  >
+    <div
+      class="sc-htpNat emEaka"
+    />
+  </div>
+</div>
+`;
