@@ -1,7 +1,7 @@
 import {
     getPlayer1Name, getPlayer1Symbol, getPlayer1Ready, getPlayer1Type,
     getPlayer2Name, getPlayer2Symbol, getPlayer2Ready, getPlayer2Type,
-} from '../selectors.js';
+} from '../selectors';
 import { PlayerRecord, SettingsRecord } from '../types/settings.types';
 
 describe('Settings selectors', () => {
