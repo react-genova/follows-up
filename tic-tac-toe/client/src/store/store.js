@@ -1,7 +1,7 @@
 import { applyMiddleware, createStore } from 'redux';
 import { combineReducers } from 'redux-immutable';
-import { logger } from 'redux-logger';
-import setRootFactory from './store.utils';
+import { createLogger } from 'redux-logger';
+import { setRootFactory, toJS as stateTransformer } from './store.utils';
 // game
 import machinebot from '../game/machinebot/machinebotMiddleware';
 import game from '../game/engine/engine';
@@ -19,6 +19,12 @@ setEngineRoot(setRootFactory('game'));
 
 const reducers = combineReducers({ settings, game, board });
 
-const store = createStore(reducers, applyMiddleware(machinebot, logger));
+const store = createStore(
+    reducers,
+    applyMiddleware(
+        machinebot,
+        createLogger({ stateTransformer }),
+    ),
+);
 
 export default store;
