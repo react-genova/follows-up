@@ -20,12 +20,14 @@ class BoardContainer extends Component {
     render() {
         const { highlightSequence, values, playingType } = this.props;
         return (
-            <Grid
-                values={values}
-                playingType={playingType}
-                onCellClick={this.onCellClick}
-                highlightSequence={highlightSequence}
-            />);
+            <div style={{ width: '800px', height: '800px' }}>
+                <Grid
+                    values={values}
+                    playingType={playingType}
+                    onCellClick={this.onCellClick}
+                    highlightSequence={highlightSequence}
+                />
+            </div>);
     }
 }
 

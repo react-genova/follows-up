@@ -2,8 +2,9 @@
 
 exports[`BodyContainer component renders without crashing (gameStarted) 1`] = `
 <div
-  class="sc-bdVaJa eWPndX"
+  class="sc-bdVaJa koRVId"
 >
+  HISTORY
   BOARD
 </div>
 `;

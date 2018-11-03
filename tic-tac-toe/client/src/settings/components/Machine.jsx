@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { PlayerType, PlayerContainer } from './Player.styled';
 
-const Machine = ({ color }) => (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <svg version="1.1" width="15em" height="15em" viewBox="0 0 48 48" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+const Machine = ({
+    color, thumbSize, fontSize, direction, showType,
+}) => (
+    <PlayerContainer direction={direction} thumbSize={thumbSize}>
+        <svg version="1.1" width="100%" height="100%" viewBox="0 0 48 48" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g id="Padding__x26__Artboard" />
             <g id="Icons">
                 <g>
@@ -28,16 +31,24 @@ const Machine = ({ color }) => (
                 </g>
             </g>
         </svg>
-        <span style={{ fontSize: '2em', fontWeight: 'bold', fontFamily: 'Arial, Helvetica, sans-serif', color }}>MACHINE</span>
-    </div>
+        {showType && <PlayerType color={color} fontSize={fontSize}>MACHINE</PlayerType>}
+    </PlayerContainer>
 );
 
 Machine.propTypes = {
     color: PropTypes.string,
+    thumbSize: PropTypes.string,
+    fontSize: PropTypes.string,
+    direction: PropTypes.string,
+    showType: PropTypes.bool,
 };
 
 Machine.defaultProps = {
     color: '#909090',
+    thumbSize: '15em',
+    fontSize: '2em',
+    direction: 'column',
+    showType: true,
 };
 
 export default Machine;

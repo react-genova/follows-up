@@ -2,101 +2,105 @@
 
 exports[`Board conatiner renders without crashing and fires correct moving action when clicking on an empty cell 1`] = `
 <div
-  class="sc-bdVaJa cpgzAv"
+  style="width: 800px; height: 800px;"
 >
   <div
-    class="sc-bwzfXH evblgu"
-    type="MOVING_SYMBOL_X"
+    class="sc-bdVaJa cpgzAv"
   >
     <div
-      class="sc-htpNat emEaka"
+      class="sc-bwzfXH evblgu"
+      type="MOVING_SYMBOL_X"
     >
-      <svg
-        height="100%"
-        viewBox="0 0 100 100"
-        width="100%"
+      <div
+        class="sc-htpNat emEaka"
       >
-        <line
-          stroke="cyan"
-          stroke-width="8"
-          x1="0"
-          x2="100"
-          y1="0"
-          y2="100"
-        />
-        <line
-          stroke="cyan"
-          stroke-width="8"
-          x1="0"
-          x2="100"
-          y1="100"
-          y2="0"
-        />
-      </svg>
+        <svg
+          height="100%"
+          viewBox="0 0 100 100"
+          width="100%"
+        >
+          <line
+            stroke="cyan"
+            stroke-width="8"
+            x1="0"
+            x2="100"
+            y1="0"
+            y2="100"
+          />
+          <line
+            stroke="cyan"
+            stroke-width="8"
+            x1="0"
+            x2="100"
+            y1="100"
+            y2="0"
+          />
+        </svg>
+      </div>
     </div>
-  </div>
-  <div
-    class="sc-bwzfXH kbZGzz"
-    type="MOVING_SYMBOL_O"
-  >
     <div
-      class="sc-htpNat emEaka"
+      class="sc-bwzfXH kbZGzz"
+      type="MOVING_SYMBOL_O"
     >
-      <svg
-        height="100%"
-        viewBox="0 0 100 100"
-        width="100%"
+      <div
+        class="sc-htpNat emEaka"
       >
-        <ellipse
-          cx="50"
-          cy="50"
-          fill="transparent"
-          rx="46"
-          ry="46"
-          stroke="yellow"
-          stroke-width="8"
-        />
-      </svg>
+        <svg
+          height="100%"
+          viewBox="0 0 100 100"
+          width="100%"
+        >
+          <ellipse
+            cx="50"
+            cy="50"
+            fill="transparent"
+            rx="46"
+            ry="46"
+            stroke="yellow"
+            stroke-width="8"
+          />
+        </svg>
+      </div>
     </div>
-  </div>
-  <div
-    class="sc-bwzfXH evblgu"
-    type="MOVING_SYMBOL_X"
-  >
     <div
-      class="sc-htpNat emEaka"
+      class="sc-bwzfXH evblgu"
+      type="MOVING_SYMBOL_X"
     >
-      <svg
-        height="100%"
-        viewBox="0 0 100 100"
-        width="100%"
+      <div
+        class="sc-htpNat emEaka"
       >
-        <line
-          stroke="cyan"
-          stroke-width="8"
-          x1="0"
-          x2="100"
-          y1="0"
-          y2="100"
-        />
-        <line
-          stroke="cyan"
-          stroke-width="8"
-          x1="0"
-          x2="100"
-          y1="100"
-          y2="0"
-        />
-      </svg>
+        <svg
+          height="100%"
+          viewBox="0 0 100 100"
+          width="100%"
+        >
+          <line
+            stroke="cyan"
+            stroke-width="8"
+            x1="0"
+            x2="100"
+            y1="0"
+            y2="100"
+          />
+          <line
+            stroke="cyan"
+            stroke-width="8"
+            x1="0"
+            x2="100"
+            y1="100"
+            y2="0"
+          />
+        </svg>
+      </div>
     </div>
-  </div>
-  <div
-    class="sc-bwzfXH evblgu"
-    type="NONE"
-  >
     <div
-      class="sc-htpNat emEaka"
-    />
+      class="sc-bwzfXH evblgu"
+      type="NONE"
+    >
+      <div
+        class="sc-htpNat emEaka"
+      />
+    </div>
   </div>
 </div>
 `;

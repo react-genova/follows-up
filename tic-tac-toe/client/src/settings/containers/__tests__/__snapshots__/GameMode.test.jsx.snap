@@ -2,19 +2,20 @@
 
 exports[`GameMode component renders without crashing 1`] = `
 <div
-  class="sc-htpNat eROUxb"
+  class="sc-ifAKCX kTuGpj"
 >
   <div
-    class="sc-bdVaJa iOktxA"
+    class="sc-htpNat gHQuFj"
   >
     <div
-      style="display: flex; flex-direction: column; align-items: center;"
+      class="sc-bwzfXH eLlMqI"
+      direction="column"
     >
       <svg
-        height="15em"
+        height="100%"
         version="1.1"
         viewBox="0 0 48 48"
-        width="15em"
+        width="100%"
         xml:space="preserve"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -33,7 +34,9 @@ exports[`GameMode component renders without crashing 1`] = `
         </g>
       </svg>
       <span
-        style="font-size: 2em; font-weight: bold; font-family: Arial, Helvetica, sans-serif; color: rgb(144, 144, 144);"
+        class="sc-bdVaJa kpnfrt"
+        color="#909090"
+        font-size="2em"
       >
         HUMAN
       </span>
@@ -48,13 +51,14 @@ exports[`GameMode component renders without crashing 1`] = `
       </span>
     </div>
     <div
-      style="display: flex; flex-direction: column; align-items: center;"
+      class="sc-bwzfXH eLlMqI"
+      direction="column"
     >
       <svg
-        height="15em"
+        height="100%"
         version="1.1"
         viewBox="0 0 48 48"
-        width="15em"
+        width="100%"
         xml:space="preserve"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -141,26 +145,29 @@ exports[`GameMode component renders without crashing 1`] = `
         </g>
       </svg>
       <span
-        style="font-size: 2em; font-weight: bold; font-family: Arial, Helvetica, sans-serif; color: rgb(144, 144, 144);"
+        class="sc-bdVaJa kpnfrt"
+        color="#909090"
+        font-size="2em"
       >
         MACHINE
       </span>
     </div>
   </div>
   <div
-    class="sc-bwzfXH gCqCsr"
+    class="sc-bxivhb gJLNWv"
   />
   <div
-    class="sc-bdVaJa iOktxA"
+    class="sc-htpNat gHQuFj"
   >
     <div
-      style="display: flex; flex-direction: column; align-items: center;"
+      class="sc-bwzfXH eLlMqI"
+      direction="column"
     >
       <svg
-        height="15em"
+        height="100%"
         version="1.1"
         viewBox="0 0 48 48"
-        width="15em"
+        width="100%"
         xml:space="preserve"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -247,7 +254,9 @@ exports[`GameMode component renders without crashing 1`] = `
         </g>
       </svg>
       <span
-        style="font-size: 2em; font-weight: bold; font-family: Arial, Helvetica, sans-serif; color: rgb(144, 144, 144);"
+        class="sc-bdVaJa kpnfrt"
+        color="#909090"
+        font-size="2em"
       >
         MACHINE
       </span>
@@ -262,13 +271,14 @@ exports[`GameMode component renders without crashing 1`] = `
       </span>
     </div>
     <div
-      style="display: flex; flex-direction: column; align-items: center;"
+      class="sc-bwzfXH eLlMqI"
+      direction="column"
     >
       <svg
-        height="15em"
+        height="100%"
         version="1.1"
         viewBox="0 0 48 48"
-        width="15em"
+        width="100%"
         xml:space="preserve"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -355,26 +365,29 @@ exports[`GameMode component renders without crashing 1`] = `
         </g>
       </svg>
       <span
-        style="font-size: 2em; font-weight: bold; font-family: Arial, Helvetica, sans-serif; color: rgb(144, 144, 144);"
+        class="sc-bdVaJa kpnfrt"
+        color="#909090"
+        font-size="2em"
       >
         MACHINE
       </span>
     </div>
   </div>
   <div
-    class="sc-bwzfXH gCqCsr"
+    class="sc-bxivhb gJLNWv"
   />
   <div
-    class="sc-bdVaJa iOktxA"
+    class="sc-htpNat gHQuFj"
   >
     <div
-      style="display: flex; flex-direction: column; align-items: center;"
+      class="sc-bwzfXH eLlMqI"
+      direction="column"
     >
       <svg
-        height="15em"
+        height="100%"
         version="1.1"
         viewBox="0 0 48 48"
-        width="15em"
+        width="100%"
         xml:space="preserve"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -393,7 +406,9 @@ exports[`GameMode component renders without crashing 1`] = `
         </g>
       </svg>
       <span
-        style="font-size: 2em; font-weight: bold; font-family: Arial, Helvetica, sans-serif; color: rgb(144, 144, 144);"
+        class="sc-bdVaJa kpnfrt"
+        color="#909090"
+        font-size="2em"
       >
         HUMAN
       </span>
@@ -408,13 +423,14 @@ exports[`GameMode component renders without crashing 1`] = `
       </span>
     </div>
     <div
-      style="display: flex; flex-direction: column; align-items: center;"
+      class="sc-bwzfXH eLlMqI"
+      direction="column"
     >
       <svg
-        height="15em"
+        height="100%"
         version="1.1"
         viewBox="0 0 48 48"
-        width="15em"
+        width="100%"
         xml:space="preserve"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -433,7 +449,9 @@ exports[`GameMode component renders without crashing 1`] = `
         </g>
       </svg>
       <span
-        style="font-size: 2em; font-weight: bold; font-family: Arial, Helvetica, sans-serif; color: rgb(144, 144, 144);"
+        class="sc-bdVaJa kpnfrt"
+        color="#909090"
+        font-size="2em"
       >
         HUMAN
       </span>

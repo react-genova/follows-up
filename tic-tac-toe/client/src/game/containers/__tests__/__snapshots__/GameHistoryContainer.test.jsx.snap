@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Board conatiner renders without crashing 1`] = `
+<div
+  class="sc-gzVnrw hVUXwm"
+>
+  <span
+    class="sc-ifAKCX dWYKsW"
+  >
+    GAME HISTORY
+  </span>
+  <div
+    class="sc-EHOje grIMnK"
+  >
+    <div
+      class="sc-bZQynM cQrfPv"
+    >
+      <div
+        class="sc-bwzfXH cPrHFb"
+      >
+        <div
+          style="width: 5em; height: 1em;"
+        >
+          <div
+            class="sc-bdVaJa hWaRAZ"
+          >
+            <svg
+              height="100%"
+              viewBox="0 0 100 100"
+              width="100%"
+            >
+              <ellipse
+                cx="50"
+                cy="50"
+                fill="transparent"
+                rx="46"
+                ry="46"
+                stroke="yellow"
+                stroke-width="8"
+              />
+            </svg>
+          </div>
+        </div>
+        <span
+          class="sc-htpNat jHttyq"
+        >
+           victories
+        </span>
+        <span
+          class="sc-bxivhb dyMRuN"
+        >
+          1
+        </span>
+      </div>
+      <div
+        class="sc-bwzfXH cPrHFb"
+      >
+        <div
+          style="width: 5em; height: 1em;"
+        >
+          <div
+            class="sc-bdVaJa hWaRAZ"
+          >
+            <svg
+              height="100%"
+              viewBox="0 0 100 100"
+              width="100%"
+            >
+              <line
+                stroke="cyan"
+                stroke-width="8"
+                x1="0"
+                x2="100"
+                y1="0"
+                y2="100"
+              />
+              <line
+                stroke="cyan"
+                stroke-width="8"
+                x1="0"
+                x2="100"
+                y1="100"
+                y2="0"
+              />
+            </svg>
+          </div>
+        </div>
+        <span
+          class="sc-htpNat jHttyq"
+        >
+           victories
+        </span>
+        <span
+          class="sc-bxivhb dyMRuN"
+        >
+          1
+        </span>
+      </div>
+      <div
+        class="sc-bwzfXH cPrHFb"
+      >
+        <div
+          style="width: 2.5em; height: 1em;"
+        >
+          <div
+            class="sc-bdVaJa hWaRAZ"
+          >
+            <svg
+              height="100%"
+              viewBox="0 0 100 100"
+              width="100%"
+            >
+              <ellipse
+                cx="50"
+                cy="50"
+                fill="transparent"
+                rx="46"
+                ry="46"
+                stroke="yellow"
+                stroke-width="8"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          style="width: 2.5em; height: 1em;"
+        >
+          <div
+            class="sc-bdVaJa hWaRAZ"
+          >
+            <svg
+              height="100%"
+              viewBox="0 0 100 100"
+              width="100%"
+            >
+              <line
+                stroke="cyan"
+                stroke-width="8"
+                x1="0"
+                x2="100"
+                y1="0"
+                y2="100"
+              />
+              <line
+                stroke="cyan"
+                stroke-width="8"
+                x1="0"
+                x2="100"
+                y1="100"
+                y2="0"
+              />
+            </svg>
+          </div>
+        </div>
+        <span
+          class="sc-htpNat jHttyq"
+        >
+          Draws
+        </span>
+        <span
+          class="sc-bxivhb dyMRuN"
+        >
+          1
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-bwzfXH cMCOYb"
+    >
+      <span
+        class="sc-bxivhb dyMRuN"
+      >
+        3
+      </span>
+    </div>
+  </div>
+</div>
+`;

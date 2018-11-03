@@ -6,6 +6,7 @@ import { isGameIdle } from '../../game/modules/engine/selectors';
 jest.mock('../../game/modules/engine/selectors');
 jest.mock('../../board/containers/BoardContainer', () => () => 'BOARD');
 jest.mock('../../settings/containers/GameMode', () => () => 'GAMEMODE');
+jest.mock('../../game/containers/GameHistoryContainer', () => () => 'HISTORY');
 
 const { BodyContainer, mapStatetoProps } = require('../BodyContainer');
 
@@ -18,13 +19,11 @@ describe('BodyContainer component', () => {
     it('renders without crashing', () => {
         const { container } = render(<BodyContainer gameIdle />);
         expect(container.firstChild).toMatchSnapshot();
-        expect(container.firstChild.textContent).toBe('GAMEMODE');
     });
 
     it('renders without crashing (gameStarted)', () => {
         const { container } = render(<BodyContainer />);
         expect(container.firstChild).toMatchSnapshot();
-        expect(container.firstChild.firstChild.textContent).toBe('BOARD');
     });
 
     it('exports valid props throught mapStatetoProps 1', () => {

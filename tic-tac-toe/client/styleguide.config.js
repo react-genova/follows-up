@@ -9,5 +9,9 @@ module.exports = {
             name: 'Board',
             components: 'src/board/**/components/**/*.jsx',
         },
+        {
+            name: 'History',
+            components: 'src/game/**/components/**/*.jsx',
+        },
     ],
 };

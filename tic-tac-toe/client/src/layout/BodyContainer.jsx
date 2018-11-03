@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import BoardLayout from './BoardLayout';
 import Board from '../board/containers/BoardContainer';
+import GameHistory from '../game/containers/GameHistoryContainer';
 import GameModeSelection from '../settings/containers/GameMode';
 import { isGameIdle } from '../game/modules/engine/selectors';
 
@@ -12,6 +13,7 @@ const BodyContainer = ({ gameIdle }) => {
     }
     return (
         <BoardLayout>
+            <GameHistory />
             <Board />
         </BoardLayout>
     );
