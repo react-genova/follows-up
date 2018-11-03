@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import BoardLayout from './BoardLayout';
 import Board from '../board/containers/BoardContainer';
 import GameModeSelection from '../settings/containers/GameMode';
-import { isGameIdle } from '../game/engine/selectors';
+import { isGameIdle } from '../game/modules/engine/selectors';
 
 const BodyContainer = ({ gameIdle }) => {
     if (gameIdle) {

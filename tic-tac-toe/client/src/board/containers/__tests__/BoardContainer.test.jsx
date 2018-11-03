@@ -6,12 +6,12 @@ import { getPlayer1Symbol } from '../../../settings/modules/selectors';
 import { getBoardValues, getWinningSequence } from '../../modules/selectors';
 import { addBoardMove } from '../../modules/action.creators';
 import { SIGN_X, SIGN_O, SIGN_NONE } from '../../modules/types/signs.constants';
-import { isGameStarted } from '../../../game/engine/selectors';
+import { isGameStarted } from '../../../game/modules/engine/selectors';
 
 jest.mock('../../../settings/modules/selectors');
 jest.mock('../../modules/selectors');
 jest.mock('../../modules/action.creators');
-jest.mock('../../../game/engine/selectors');
+jest.mock('../../../game/modules/engine/selectors');
 
 describe('Board conatiner', () => {
     afterEach(() => {

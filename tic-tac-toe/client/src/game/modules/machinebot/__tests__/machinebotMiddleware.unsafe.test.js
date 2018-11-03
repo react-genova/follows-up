@@ -1,5 +1,5 @@
 import { asyncDispatch, makeARandomMove, makeCallback } from '../machinebotMiddleware.unsafe';
-import { SIGN_NONE, SIGN_O, SIGN_X } from '../../../board/modules/types/signs.constants';
+import { SIGN_NONE, SIGN_O, SIGN_X } from '../../../../board/modules/types/signs.constants';
 
 jest.useFakeTimers();
 

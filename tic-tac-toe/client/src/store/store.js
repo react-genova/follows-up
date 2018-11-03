@@ -3,10 +3,10 @@ import { combineReducers } from 'redux-immutable';
 import { createLogger } from 'redux-logger';
 import { setRootFactory, toJS as stateTransformer } from './store.utils';
 // game
-import machinebot from '../game/machinebot/machinebotMiddleware';
-import engine from '../game/engine/engineMiddleware';
-import game from '../game/engine/engine';
-import { setEngineRoot } from '../game/engine/selectors';
+import machinebot from '../game/modules/machinebot/machinebotMiddleware';
+import engine from '../game/modules/engine/engineMiddleware';
+import game from '../game/modules/engine/engine';
+import { setEngineRoot } from '../game/modules/engine/selectors';
 // settings
 import settings from '../settings/modules/settings';
 import { setSettingsRoot } from '../settings/modules/selectors';

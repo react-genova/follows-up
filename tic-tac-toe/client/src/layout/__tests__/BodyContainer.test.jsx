@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, cleanup } from 'react-testing-library';
 import 'jest-dom/extend-expect';
-import { isGameIdle } from '../../game/engine/selectors';
+import { isGameIdle } from '../../game/modules/engine/selectors';
 
-jest.mock('../../game/engine/selectors');
+jest.mock('../../game/modules/engine/selectors');
 jest.mock('../../board/containers/BoardContainer', () => () => 'BOARD');
 jest.mock('../../settings/containers/GameMode', () => () => 'GAMEMODE');
 

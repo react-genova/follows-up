@@ -1,9 +1,9 @@
 import {
     getPlayer1Ready, getPlayer2Ready, getPlayer1Symbol,
-} from '../../settings/modules/selectors';
+} from '../../../settings/modules/selectors';
 import { isGameStarted, isGameIdle } from './selectors';
 import { beginGame, endGame } from './action.creators';
-import { getBoardResults } from '../../board/modules/selectors';
+import { getBoardResults } from '../../../board/modules/selectors';
 import { DRAW, PLAYER_1_WON, PLAYER_2_WON } from './types/game.results.constants';
 
 const engineMiddleware = ({ getState, dispatch }) => next => (action) => {

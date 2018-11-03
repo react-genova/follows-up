@@ -1,10 +1,10 @@
-import { ADD_BOARD_MOVE } from '../../board/modules/action.definitions';
+import { ADD_BOARD_MOVE } from '../../../board/modules/action.definitions';
 import {
     getPlayer1Symbol, getPlayer1Type, getPlayer2Type, getPlayer2Symbol,
-} from '../../settings/modules/selectors';
-import { PLAYER_TYPE_MACHINE } from '../../settings/modules/types/player.types.constants';
-import { addBoardMove } from '../../board/modules/action.creators';
-import { getBoardValues } from '../../board/modules/selectors';
+} from '../../../settings/modules/selectors';
+import { PLAYER_TYPE_MACHINE } from '../../../settings/modules/types/player.types.constants';
+import { addBoardMove } from '../../../board/modules/action.creators';
+import { getBoardValues } from '../../../board/modules/selectors';
 import { makeARandomMove, asyncDispatch } from './machinebotMiddleware.unsafe';
 import { BEGIN_GAME } from '../engine/action.definitions';
 import { isGameStarted } from '../engine/selectors';

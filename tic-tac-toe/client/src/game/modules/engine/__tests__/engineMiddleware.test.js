@@ -2,17 +2,17 @@ import { cleanup } from 'react-testing-library';
 import middleware from '../engineMiddleware';
 import {
     getPlayer1Ready, getPlayer2Ready, getPlayer1Symbol, getPlayer2Symbol,
-} from '../../../settings/modules/selectors';
+} from '../../../../settings/modules/selectors';
 import { isGameStarted, isGameIdle } from '../selectors';
 import { beginGame, endGame } from '../action.creators';
-import { SIGN_NONE } from '../../../board/modules/types/signs.constants';
+import { SIGN_NONE } from '../../../../board/modules/types/signs.constants';
 import { PLAYER_1_WON, PLAYER_2_WON, DRAW } from '../types/game.results.constants';
-import { getBoardResults } from '../../../board/modules/selectors';
+import { getBoardResults } from '../../../../board/modules/selectors';
 
-jest.mock('../../../settings/modules/selectors');
+jest.mock('../../../../settings/modules/selectors');
 jest.mock('../selectors');
 jest.mock('../action.creators');
-jest.mock('../../../board/modules/selectors');
+jest.mock('../../../../board/modules/selectors');
 
 describe('Engine middleware', () => {
     afterEach(() => {

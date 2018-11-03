@@ -10,7 +10,7 @@ export const makeARandomMove = (values) => {
     return -1;
 };
 
-// created this callback maker only for testing purpose. 
+// created this callback maker only for testing purpose.
 // the more compact solution: "setTimeout(() => dispatch(action), ...)"
 // is not testable at all. (so far and with jest)
 export const makeCallback = (dispatch, action) => () => dispatch(action);

@@ -6,7 +6,7 @@ import { getPlayer1Symbol } from '../../settings/modules/selectors';
 import { getBoardValues, getWinningSequence } from '../modules/selectors';
 import { addBoardMove } from '../modules/action.creators';
 import { valuesPropTypes, playingTypePropTypes } from '../components/grid/Grid.types';
-import { isGameStarted } from '../../game/engine/selectors';
+import { isGameStarted } from '../../game/modules/engine/selectors';
 
 class BoardContainer extends Component {
     onCellClick = (index) => {

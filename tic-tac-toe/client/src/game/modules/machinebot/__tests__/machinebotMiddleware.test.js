@@ -2,17 +2,17 @@ import { cleanup } from 'react-testing-library';
 import middleware from '../machinebotMiddleware';
 import {
     getPlayer1Symbol, getPlayer1Type, getPlayer2Type, getPlayer2Symbol,
-} from '../../../settings/modules/selectors';
-import { getBoardValues } from '../../../board/modules/selectors';
+} from '../../../../settings/modules/selectors';
+import { getBoardValues } from '../../../../board/modules/selectors';
 import { makeARandomMove, asyncDispatch } from '../machinebotMiddleware.unsafe';
-import { addBoardMove } from '../../../board/modules/action.creators';
+import { addBoardMove } from '../../../../board/modules/action.creators';
 import { beginGame } from '../../engine/action.creators';
-import { MOVING_SYMBOL_O, MOVING_SYMBOL_X } from '../../../settings/modules/types/moving.symbols.constants';
-import { PLAYER_TYPE_HUMAN, PLAYER_TYPE_MACHINE } from '../../../settings/modules/types/player.types.constants';
+import { MOVING_SYMBOL_O, MOVING_SYMBOL_X } from '../../../../settings/modules/types/moving.symbols.constants';
+import { PLAYER_TYPE_HUMAN, PLAYER_TYPE_MACHINE } from '../../../../settings/modules/types/player.types.constants';
 import { isGameStarted } from '../../engine/selectors';
 
-jest.mock('../../../settings/modules/selectors');
-jest.mock('../../../board/modules/selectors');
+jest.mock('../../../../settings/modules/selectors');
+jest.mock('../../../../board/modules/selectors');
 jest.mock('../../engine/selectors');
 jest.mock('../machinebotMiddleware.unsafe');
 
