@@ -6,7 +6,7 @@ import { PLAYER_TYPE_MACHINE } from '../../settings/modules/types/player.types.c
 import { addBoardMove } from '../../board/modules/action.creators';
 import { getBoardValues } from '../../board/modules/selectors';
 import { makeARandomMove, asyncDispatch } from './machinebotMiddleware.unsafe';
-import { UPDATE_PLAYERS } from '../../settings/modules/action.definitions';
+import { BEGIN_GAME } from '../engine/action.definitions';
 
 const dispatchMachineMove = (dispatch, sign, playerType, playerSymbol, nextMove) => {
     if (PLAYER_TYPE_MACHINE === playerType && sign !== playerSymbol) {
@@ -17,13 +17,19 @@ const dispatchMachineMove = (dispatch, sign, playerType, playerSymbol, nextMove)
 export default ({ getState, dispatch }) => next => (action) => {
     const { type, payload } = action;
     const result = next(action);
-    if (UPDATE_PLAYERS === type) {
+    if (BEGIN_GAME === type) {
         const state = getState();
         if (PLAYER_TYPE_MACHINE === getPlayer1Type(state)) {
             const values = getBoardValues(state);
             const nextMove = makeARandomMove(values);
             if (nextMove >= 0) {
-                dispatchMachineMove(dispatch, getPlayer2Symbol(state), getPlayer1Type(state), getPlayer1Symbol(state), nextMove);
+                dispatchMachineMove(
+                    dispatch,
+                    getPlayer2Symbol(state),
+                    getPlayer1Type(state),
+                    getPlayer1Symbol(state),
+                    nextMove,
+                );
             }
         }
     } else if (ADD_BOARD_MOVE === type) {
@@ -33,8 +39,12 @@ export default ({ getState, dispatch }) => next => (action) => {
         const nextMove = makeARandomMove(values);
         if (nextMove >= 0) {
             // we have an available move
-            dispatchMachineMove(dispatch, sign, getPlayer1Type(state), getPlayer1Symbol(state), nextMove);
-            dispatchMachineMove(dispatch, sign, getPlayer2Type(state), getPlayer2Symbol(state), nextMove);
+            dispatchMachineMove(
+                dispatch, sign, getPlayer1Type(state), getPlayer1Symbol(state), nextMove,
+            );
+            dispatchMachineMove(
+                dispatch, sign, getPlayer2Type(state), getPlayer2Symbol(state), nextMove,
+            );
         }
     }
     return result;

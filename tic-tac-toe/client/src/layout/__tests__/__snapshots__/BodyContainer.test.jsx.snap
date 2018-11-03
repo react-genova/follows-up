@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BodyContainer component renders without crashing (playersReady) 1`] = `
+exports[`BodyContainer component renders without crashing (gameStarted) 1`] = `
 <div
   class="sc-bdVaJa eWPndX"
 >

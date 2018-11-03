@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import { IDLE } from './types/game.status.constants';
 
 let getEngineRoot = state => state;
 
@@ -19,3 +20,5 @@ export const getTotalDraws = createSelector([getEngineHistory], engine => engine
 export const getTotalPlayer1Victories = createSelector([getEngineHistory], engine => engine.get('player1victories'));
 
 export const getTotalPlayer2Victories = createSelector([getEngineHistory], engine => engine.get('player2victories'));
+
+export const isGameStarted = createSelector([getGameStatus], status => IDLE !== status);

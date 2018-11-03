@@ -4,8 +4,10 @@ import {
     getTotalDraws,
     getTotalPlayer1Victories,
     getTotalPlayer2Victories,
+    isGameStarted,
 } from '../selectors';
 import { EngineRecord, GameHistoryRecord } from '../types/engine.types';
+import { IDLE } from '../types/game.status.constants';
 
 describe('Engine selectors', () => {
     const STATE = new EngineRecord({
@@ -21,6 +23,8 @@ describe('Engine selectors', () => {
     it('retrieves current game info', () => {
         expect(getGameStatus(STATE)).toBe('THE STATUS');
         expect(getLastResult(STATE)).toBe('THE RESULT');
+        expect(isGameStarted(STATE)).toBe(true);
+        expect(isGameStarted(STATE.set('status', IDLE))).toBe(false);
     });
 
     it('retrieves historical data', () => {

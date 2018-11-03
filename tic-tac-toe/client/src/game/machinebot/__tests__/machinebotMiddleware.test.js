@@ -6,7 +6,7 @@ import {
 import { getBoardValues } from '../../../board/modules/selectors';
 import { makeARandomMove, asyncDispatch } from '../machinebotMiddleware.unsafe';
 import { addBoardMove } from '../../../board/modules/action.creators';
-import { updatePlayers } from '../../../settings/modules/action.creators';
+import { beginGame } from '../../engine/action.creators';
 import { MOVING_SYMBOL_O, MOVING_SYMBOL_X } from '../../../settings/modules/types/moving.symbols.constants';
 import { PLAYER_TYPE_HUMAN, PLAYER_TYPE_MACHINE } from '../../../settings/modules/types/player.types.constants';
 
@@ -76,7 +76,8 @@ describe('Machine bot middleware', () => {
         // checking results
         expect(next).toHaveBeenCalledTimes(1);
         expect(next).toHaveBeenCalledWith(action);
-        expect(asyncDispatch).toHaveBeenCalledWith(store.dispatch, addBoardMove(NEXT_MOVE, MOVING_SYMBOL_X));
+        expect(asyncDispatch)
+            .toHaveBeenCalledWith(store.dispatch, addBoardMove(NEXT_MOVE, MOVING_SYMBOL_X));
     });
 
     it('generates a move when it is the machine round (p2 machine)', () => {
@@ -96,14 +97,15 @@ describe('Machine bot middleware', () => {
         // checking results
         expect(next).toHaveBeenCalledTimes(1);
         expect(next).toHaveBeenCalledWith(action);
-        expect(asyncDispatch).toHaveBeenCalledWith(store.dispatch, addBoardMove(NEXT_MOVE, MOVING_SYMBOL_O));
+        expect(asyncDispatch)
+            .toHaveBeenCalledWith(store.dispatch, addBoardMove(NEXT_MOVE, MOVING_SYMBOL_O));
     });
 
     it('generates a move on game start with a p1 machine', () => {
         const NEXT_MOVE = 1;
         const next = jest.fn();
         const store = { getState: jest.fn(), dispatch: jest.fn() };
-        const action = updatePlayers();
+        const action = beginGame();
         getPlayer1Type.mockImplementation(() => PLAYER_TYPE_MACHINE);
         getPlayer1Symbol.mockImplementation(() => MOVING_SYMBOL_X);
         getPlayer2Type.mockImplementation(() => PLAYER_TYPE_HUMAN);
@@ -116,14 +118,15 @@ describe('Machine bot middleware', () => {
         // checking results
         expect(next).toHaveBeenCalledTimes(1);
         expect(next).toHaveBeenCalledWith(action);
-        expect(asyncDispatch).toHaveBeenCalledWith(store.dispatch, addBoardMove(NEXT_MOVE, MOVING_SYMBOL_X));
+        expect(asyncDispatch)
+            .toHaveBeenCalledWith(store.dispatch, addBoardMove(NEXT_MOVE, MOVING_SYMBOL_X));
     });
 
     it('does not generate a move on game start with a p1 human', () => {
         const NEXT_MOVE = 1;
         const next = jest.fn();
         const store = { getState: jest.fn(), dispatch: jest.fn() };
-        const action = updatePlayers();
+        const action = beginGame();
         getPlayer1Type.mockImplementation(() => PLAYER_TYPE_HUMAN);
         getPlayer1Symbol.mockImplementation(() => MOVING_SYMBOL_X);
         getPlayer2Type.mockImplementation(() => PLAYER_TYPE_MACHINE);
@@ -143,7 +146,7 @@ describe('Machine bot middleware', () => {
         const NEXT_MOVE = -1;
         const next = jest.fn();
         const store = { getState: jest.fn(), dispatch: jest.fn() };
-        const action = updatePlayers();
+        const action = beginGame();
         getPlayer1Type.mockImplementation(() => PLAYER_TYPE_MACHINE);
         getPlayer1Symbol.mockImplementation(() => MOVING_SYMBOL_X);
         getPlayer2Type.mockImplementation(() => PLAYER_TYPE_HUMAN);

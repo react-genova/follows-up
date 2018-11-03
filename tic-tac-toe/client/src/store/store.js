@@ -4,6 +4,7 @@ import { createLogger } from 'redux-logger';
 import { setRootFactory, toJS as stateTransformer } from './store.utils';
 // game
 import machinebot from '../game/machinebot/machinebotMiddleware';
+import engine from '../game/engine/engineMiddleware';
 import game from '../game/engine/engine';
 import { setEngineRoot } from '../game/engine/selectors';
 // settings
@@ -22,6 +23,7 @@ const reducers = combineReducers({ settings, game, board });
 const store = createStore(
     reducers,
     applyMiddleware(
+        engine,
         machinebot,
         createLogger({ stateTransformer }),
     ),
