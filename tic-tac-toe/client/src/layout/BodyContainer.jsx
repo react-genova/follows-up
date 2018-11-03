@@ -6,6 +6,7 @@ import Board from '../board/containers/BoardContainer';
 import GameHistory from '../game/containers/GameHistoryContainer';
 import GameModeSelection from '../settings/containers/GameMode';
 import { isGameIdle } from '../game/modules/engine/selectors';
+import Menu from '../game/containers/Menu';
 
 const BodyContainer = ({ gameIdle }) => {
     if (gameIdle) {
@@ -13,7 +14,10 @@ const BodyContainer = ({ gameIdle }) => {
     }
     return (
         <BoardLayout>
-            <GameHistory />
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <GameHistory />
+                <Menu />
+            </div>
             <Board />
         </BoardLayout>
     );

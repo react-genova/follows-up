@@ -7,6 +7,7 @@ jest.mock('../../game/modules/engine/selectors');
 jest.mock('../../board/containers/BoardContainer', () => () => 'BOARD');
 jest.mock('../../settings/containers/GameMode', () => () => 'GAMEMODE');
 jest.mock('../../game/containers/GameHistoryContainer', () => () => 'HISTORY');
+jest.mock('../../game/containers/Menu', () => () => 'MENU');
 
 const { BodyContainer, mapStatetoProps } = require('../BodyContainer');
 

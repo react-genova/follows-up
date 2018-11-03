@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component renders without crashing (empty) 1`] = `
+<button
+  class="sc-bdVaJa kJcqmF"
+  type="button"
+/>
+`;
+
+exports[`Button component renders without crashing (filled) 1`] = `
+<button
+  class="sc-bdVaJa kJcqmF"
+  type="button"
+>
+  Play again
+</button>
+`;

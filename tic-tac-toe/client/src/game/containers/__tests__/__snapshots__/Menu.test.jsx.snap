@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu conatiner renders without crashing 1`] = `
+<div
+  style="display: flex; flex-direction: column; justify-content: center; align-items: center;"
+>
+  <button
+    class="sc-bdVaJa kJcqmF"
+    type="button"
+  >
+    Play again
+  </button>
+</div>
+`;

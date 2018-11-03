@@ -11,7 +11,7 @@ import {
 jest.mock('../../../settings/modules/selectors');
 jest.mock('../../modules/engine/selectors');
 
-describe('Board conatiner', () => {
+describe('GamesHistory conatiner', () => {
     afterEach(() => {
         cleanup();
         jest.clearAllMocks();
