@@ -5,13 +5,15 @@ import {
     getTotalPlayer1Victories,
     getTotalPlayer2Victories,
     isGameStarted,
+    isGameIdle,
+    isGameWaiting,
 } from '../selectors';
 import { EngineRecord, GameHistoryRecord } from '../types/engine.types';
-import { IDLE } from '../types/game.status.constants';
+import { IDLE, STARTED, WAITING_FOR_START } from '../types/game.status.constants';
 
 describe('Engine selectors', () => {
     const STATE = new EngineRecord({
-        status: 'THE STATUS',
+        status: STARTED,
         result: 'THE RESULT',
         history: new GameHistoryRecord({
             draws: 2,
@@ -21,10 +23,19 @@ describe('Engine selectors', () => {
     });
 
     it('retrieves current game info', () => {
-        expect(getGameStatus(STATE)).toBe('THE STATUS');
+        expect(getGameStatus(STATE)).toBe(STARTED);
         expect(getLastResult(STATE)).toBe('THE RESULT');
         expect(isGameStarted(STATE)).toBe(true);
-        expect(isGameStarted(STATE.set('status', IDLE))).toBe(false);
+        expect(isGameIdle(STATE)).toBe(false);
+        expect(isGameWaiting(STATE)).toBe(false);
+        const STATE_IDLE = STATE.set('status', IDLE);
+        expect(isGameStarted(STATE_IDLE)).toBe(false);
+        expect(isGameIdle(STATE_IDLE)).toBe(true);
+        expect(isGameWaiting(STATE_IDLE)).toBe(false);
+        const STATE_WAITING = STATE.set('status', WAITING_FOR_START);
+        expect(isGameStarted(STATE_WAITING)).toBe(false);
+        expect(isGameIdle(STATE_WAITING)).toBe(false);
+        expect(isGameWaiting(STATE_WAITING)).toBe(true);
     });
 
     it('retrieves historical data', () => {

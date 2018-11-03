@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { IDLE } from './types/game.status.constants';
+import { IDLE, WAITING_FOR_START, STARTED } from './types/game.status.constants';
 
 let getEngineRoot = state => state;
 
@@ -21,4 +21,10 @@ export const getTotalPlayer1Victories = createSelector([getEngineHistory], engin
 
 export const getTotalPlayer2Victories = createSelector([getEngineHistory], engine => engine.get('player2victories'));
 
-export const isGameStarted = createSelector([getGameStatus], status => IDLE !== status);
+export const isGameStarted = createSelector([getGameStatus], status => STARTED === status);
+
+export const isGameIdle = createSelector([getGameStatus], status => IDLE === status);
+
+export const isGameWaiting = createSelector(
+    [getGameStatus], status => WAITING_FOR_START === status,
+);

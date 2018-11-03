@@ -23,8 +23,8 @@ const reducers = combineReducers({ settings, game, board });
 const store = createStore(
     reducers,
     applyMiddleware(
-        engine,
         machinebot,
+        engine,
         createLogger({ stateTransformer }),
     ),
 );

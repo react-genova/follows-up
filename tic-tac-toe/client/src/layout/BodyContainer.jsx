@@ -4,29 +4,29 @@ import PropTypes from 'prop-types';
 import BoardLayout from './BoardLayout';
 import Board from '../board/containers/BoardContainer';
 import GameModeSelection from '../settings/containers/GameMode';
-import { isGameStarted } from '../game/engine/selectors';
+import { isGameIdle } from '../game/engine/selectors';
 
-const BodyContainer = ({ gameStarted }) => {
-    if (gameStarted) {
-        return (
-            <BoardLayout>
-                <Board />
-            </BoardLayout>
-        );
+const BodyContainer = ({ gameIdle }) => {
+    if (gameIdle) {
+        return <GameModeSelection />;
     }
-    return <GameModeSelection />;
+    return (
+        <BoardLayout>
+            <Board />
+        </BoardLayout>
+    );
 };
 
 BodyContainer.propTypes = {
-    gameStarted: PropTypes.bool,
+    gameIdle: PropTypes.bool,
 };
 
 BodyContainer.defaultProps = {
-    gameStarted: false,
+    gameIdle: false,
 };
 
 export const mapStatetoProps = state => ({
-    gameStarted: isGameStarted(state),
+    gameIdle: isGameIdle(state),
 });
 
 export { BodyContainer };

@@ -6,11 +6,12 @@ import { getPlayer1Symbol } from '../../settings/modules/selectors';
 import { getBoardValues } from '../modules/selectors';
 import { addBoardMove } from '../modules/action.creators';
 import { valuesPropTypes, playingTypePropTypes } from '../components/grid/Grid.types';
+import { isGameStarted } from '../../game/engine/selectors';
 
 class BoardContainer extends Component {
     onCellClick = (index) => {
-        const { values, playingType } = this.props;
-        if (!values[index].valid) {
+        const { values, playingType, gameStarted } = this.props;
+        if (gameStarted && !values[index].valid) {
             const { addBoardMove: fireAddBoardMove } = this.props;
             fireAddBoardMove(index, playingType);
         }
@@ -26,6 +27,7 @@ BoardContainer.propTypes = {
     addBoardMove: PropTypes.func,
     playingType: playingTypePropTypes.isRequired,
     values: valuesPropTypes.isRequired,
+    gameStarted: PropTypes.bool.isRequired,
 };
 
 BoardContainer.defaultProps = {
@@ -35,6 +37,7 @@ BoardContainer.defaultProps = {
 export const mapStateToProps = state => ({
     values: getBoardValues(state),
     playingType: getPlayer1Symbol(state),
+    gameStarted: isGameStarted(state),
 });
 
 export const mapDispatchToProps = {

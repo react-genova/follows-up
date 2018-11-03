@@ -7,6 +7,7 @@ import { addBoardMove } from '../../board/modules/action.creators';
 import { getBoardValues } from '../../board/modules/selectors';
 import { makeARandomMove, asyncDispatch } from './machinebotMiddleware.unsafe';
 import { BEGIN_GAME } from '../engine/action.definitions';
+import { isGameStarted } from '../engine/selectors';
 
 const dispatchMachineMove = (dispatch, sign, playerType, playerSymbol, nextMove) => {
     if (PLAYER_TYPE_MACHINE === playerType && sign !== playerSymbol) {
@@ -17,8 +18,12 @@ const dispatchMachineMove = (dispatch, sign, playerType, playerSymbol, nextMove)
 export default ({ getState, dispatch }) => next => (action) => {
     const { type, payload } = action;
     const result = next(action);
-    if (BEGIN_GAME === type) {
-        const state = getState();
+    const state = getState();
+    if (!isGameStarted(state)) {
+        return result;
+    }
+    switch (type) {
+    case BEGIN_GAME: {
         if (PLAYER_TYPE_MACHINE === getPlayer1Type(state)) {
             const values = getBoardValues(state);
             const nextMove = makeARandomMove(values);
@@ -32,8 +37,9 @@ export default ({ getState, dispatch }) => next => (action) => {
                 );
             }
         }
-    } else if (ADD_BOARD_MOVE === type) {
-        const state = getState();
+        break;
+    }
+    case ADD_BOARD_MOVE: {
         const { sign } = payload;
         const values = getBoardValues(state);
         const nextMove = makeARandomMove(values);
@@ -46,6 +52,9 @@ export default ({ getState, dispatch }) => next => (action) => {
                 dispatch, sign, getPlayer2Type(state), getPlayer2Symbol(state), nextMove,
             );
         }
+        break;
+    }
+    default: break;
     }
     return result;
 };
