@@ -2,7 +2,8 @@
 
 exports[`GridCell component renders without crashing 1`] = `
 <div
-  class="sc-bwzfXH cZlmOf"
+  class="sc-bwzfXH kbZGzz"
+  type="MOVING_SYMBOL_O"
 >
   <div
     class="sc-htpNat emEaka"

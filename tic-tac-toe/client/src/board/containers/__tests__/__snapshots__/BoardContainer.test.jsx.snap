@@ -5,7 +5,8 @@ exports[`Board conatiner renders without crashing and fires correct moving actio
   class="sc-bdVaJa cpgzAv"
 >
   <div
-    class="sc-bwzfXH cZlmOf"
+    class="sc-bwzfXH evblgu"
+    type="MOVING_SYMBOL_X"
   >
     <div
       class="sc-htpNat emEaka"
@@ -35,7 +36,8 @@ exports[`Board conatiner renders without crashing and fires correct moving actio
     </div>
   </div>
   <div
-    class="sc-bwzfXH cZlmOf"
+    class="sc-bwzfXH kbZGzz"
+    type="MOVING_SYMBOL_O"
   >
     <div
       class="sc-htpNat emEaka"
@@ -58,7 +60,8 @@ exports[`Board conatiner renders without crashing and fires correct moving actio
     </div>
   </div>
   <div
-    class="sc-bwzfXH cZlmOf"
+    class="sc-bwzfXH evblgu"
+    type="MOVING_SYMBOL_X"
   >
     <div
       class="sc-htpNat emEaka"
@@ -88,7 +91,8 @@ exports[`Board conatiner renders without crashing and fires correct moving actio
     </div>
   </div>
   <div
-    class="sc-bwzfXH cZlmOf"
+    class="sc-bwzfXH evblgu"
+    type="NONE"
   >
     <div
       class="sc-htpNat emEaka"

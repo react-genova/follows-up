@@ -5,22 +5,19 @@ import {
 } from '../../../settings/modules/selectors';
 import { isGameStarted, isGameIdle } from '../selectors';
 import { beginGame, endGame } from '../action.creators';
-import getMatchResuls from '../engine.utils';
 import { SIGN_NONE } from '../../../board/modules/types/signs.constants';
 import { PLAYER_1_WON, PLAYER_2_WON, DRAW } from '../types/game.results.constants';
-import { getBoardValues } from '../../../board/modules/selectors';
+import { getBoardResults } from '../../../board/modules/selectors';
 
 jest.mock('../../../settings/modules/selectors');
 jest.mock('../selectors');
 jest.mock('../action.creators');
-jest.mock('../engine.utils');
 jest.mock('../../../board/modules/selectors');
 
 describe('Engine middleware', () => {
     afterEach(() => {
         cleanup();
         jest.clearAllMocks();
-        getBoardValues.mockImplementation(() => []);
     });
 
     const MATCH_RESULTS_NO_ENDED = {
@@ -41,7 +38,7 @@ describe('Engine middleware', () => {
         const store = { getState: jest.fn() };
         const action = { type: 'ANY ACTION' };
         isGameStarted.mockImplementation(() => true);
-        getMatchResuls.mockImplementation(() => MATCH_RESULTS_NO_ENDED);
+        getBoardResults.mockImplementation(() => MATCH_RESULTS_NO_ENDED);
         // executing
         middleware(store)(next)(action);
         // checking results
@@ -63,7 +60,7 @@ describe('Engine middleware', () => {
             winner: 'X',
         };
         const endGameAction = endGame(PLAYER_1_WON);
-        getMatchResuls.mockImplementation(() => MATCH_RESULTS_P1WON);
+        getBoardResults.mockImplementation(() => MATCH_RESULTS_P1WON);
         // executing
         middleware(store)(next)(action);
         // checking results
@@ -87,7 +84,7 @@ describe('Engine middleware', () => {
             winner: 'O',
         };
         const endGameAction = endGame(PLAYER_2_WON);
-        getMatchResuls.mockImplementation(() => MATCH_RESULTS_P2WON);
+        getBoardResults.mockImplementation(() => MATCH_RESULTS_P2WON);
         // executing
         middleware(store)(next)(action);
         // checking results
@@ -112,7 +109,7 @@ describe('Engine middleware', () => {
             winner: '_',
         };
         const endGameAction = endGame(DRAW);
-        getMatchResuls.mockImplementation(() => MATCH_RESULTS_DRAW);
+        getBoardResults.mockImplementation(() => MATCH_RESULTS_DRAW);
         // executing
         middleware(store)(next)(action);
         // checking results
@@ -130,7 +127,7 @@ describe('Engine middleware', () => {
         getPlayer2Ready.mockImplementation(() => true);
         isGameStarted.mockImplementation(() => false);
         isGameIdle.mockImplementation(() => true);
-        getMatchResuls.mockImplementation(() => MATCH_RESULTS_NO_ENDED);
+        getBoardResults.mockImplementation(() => MATCH_RESULTS_NO_ENDED);
         // executing
         middleware(store)(next)(action);
         // checking results
@@ -146,7 +143,7 @@ describe('Engine middleware', () => {
         getPlayer2Ready.mockImplementation(() => false);
         isGameStarted.mockImplementation(() => false);
         isGameIdle.mockImplementation(() => true);
-        getMatchResuls.mockImplementation(() => MATCH_RESULTS_NO_ENDED);
+        getBoardResults.mockImplementation(() => MATCH_RESULTS_NO_ENDED);
         // executing
         middleware(store)(next)(action);
         // checking results
@@ -162,7 +159,7 @@ describe('Engine middleware', () => {
         getPlayer2Ready.mockImplementation(() => true);
         isGameStarted.mockImplementation(() => true);
         isGameIdle.mockImplementation(() => false);
-        getMatchResuls.mockImplementation(() => MATCH_RESULTS_NO_ENDED);
+        getBoardResults.mockImplementation(() => MATCH_RESULTS_NO_ENDED);
         // executing
         middleware(store)(next)(action);
         // checking results
@@ -179,7 +176,7 @@ describe('Engine middleware', () => {
         getPlayer2Ready.mockImplementation(() => true);
         isGameIdle.mockImplementation(() => true);
         isGameStarted.mockImplementation(() => false);
-        getMatchResuls.mockImplementation(() => MATCH_RESULTS_NO_ENDED);
+        getBoardResults.mockImplementation(() => MATCH_RESULTS_NO_ENDED);
         // executing
         middleware(store)(next)(action);
         // checking results

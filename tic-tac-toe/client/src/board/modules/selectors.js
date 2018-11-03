@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
 import { SIGN_NONE } from './types/signs.constants';
+import getResultsFromValues from './board.utils';
 
 let getBoardRoot = state => state;
 
@@ -13,3 +14,7 @@ export const getBoardValues = createSelector([getBoard], board => board.get('val
     value,
     valid: SIGN_NONE !== value,
 })).toJS());
+
+export const getBoardResults = createSelector([getBoardValues], getResultsFromValues);
+
+export const getWinningSequence = createSelector([getBoardResults], results => results.winningSequence);

@@ -1,5 +1,5 @@
 import winningSequences from './types/game.winning.sequences';
-import { SIGN_NONE } from '../../board/modules/types/signs.constants';
+import { SIGN_NONE } from './types/signs.constants';
 
 const getWinner = (values) => {
     const result = {

@@ -7,13 +7,27 @@ import { SIGN_O, SIGN_X, SIGN_NONE } from '../../../modules/types/signs.constant
 describe('Grid component', () => {
     afterEach(cleanup);
 
-    it('renders without crashing', () => {
+    it('renders without crashing empty hightlight sequence', () => {
         const VALUES = [
             { value: SIGN_O, valid: true },
             { value: SIGN_X, valid: true },
             { value: SIGN_NONE, valid: true },
         ];
-        const { container } = render(<Grid values={VALUES} playingType={SIGN_O} />);
+        const { container } = render(
+            <Grid highlightSequence={[]} values={VALUES} playingType={SIGN_O} />
+        );
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('renders without crashing valid winning sequence', () => {
+        const VALUES = [
+            { value: SIGN_O, valid: true },
+            { value: SIGN_X, valid: true },
+            { value: SIGN_NONE, valid: true },
+        ];
+        const { container } = render(
+            <Grid highlightSequence={[1]} values={VALUES} playingType={SIGN_O} />
+        );
         expect(container.firstChild).toMatchSnapshot();
     });
 });

@@ -3,15 +3,14 @@ import {
 } from '../../settings/modules/selectors';
 import { isGameStarted, isGameIdle } from './selectors';
 import { beginGame, endGame } from './action.creators';
-import { getBoardValues } from '../../board/modules/selectors';
-import getGameResults from './engine.utils';
+import { getBoardResults } from '../../board/modules/selectors';
 import { DRAW, PLAYER_1_WON, PLAYER_2_WON } from './types/game.results.constants';
 
 const engineMiddleware = ({ getState, dispatch }) => next => (action) => {
     const resultAction = next(action);
     const state = getState();
     if (isGameStarted(state)) {
-        const result = getGameResults(getBoardValues(state));
+        const result = getBoardResults(state);
         if (result.ended) {
             if (result.draw) {
                 dispatch(endGame(DRAW));

@@ -6,7 +6,9 @@ import GridCell from './GridCell';
 
 const getIndex = index => index;
 
-const Grid = ({ values, playingType, onCellClick }) => (
+const Grid = ({
+    values, playingType, onCellClick, highlightSequence,
+}) => (
     <GridContainer>
         {
             values.map(({ value, valid }, index) => (
@@ -15,6 +17,7 @@ const Grid = ({ values, playingType, onCellClick }) => (
                     valid={valid}
                     value={value}
                     index={index}
+                    highlight={highlightSequence.indexOf(index) >= 0}
                     playingType={playingType}
                     onClick={onCellClick}
                 />
@@ -27,6 +30,7 @@ Grid.propTypes = {
     values: valuesPropTypes.isRequired,
     playingType: playingTypePropTypes.isRequired,
     onCellClick: PropTypes.func,
+    highlightSequence: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 Grid.defaultProps = {

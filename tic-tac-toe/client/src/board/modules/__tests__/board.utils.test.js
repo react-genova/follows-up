@@ -1,5 +1,5 @@
-import getGameResults from '../engine.utils';
-import { SIGN_NONE as _, SIGN_O as O, SIGN_X as X } from '../../../board/modules/types/signs.constants';
+import getBoardResultsFromValues from '../board.utils';
+import { SIGN_NONE as _, SIGN_O as O, SIGN_X as X } from '../types/signs.constants';
 
 describe('Engine utils. Game result', () => {
     const val = value => ({ value, valid: _ !== value });
@@ -10,7 +10,7 @@ describe('Engine utils. Game result', () => {
             O, X, X,
             O, O, X,
         ].map(val);
-        expect(getGameResults(VALUES)).toEqual({
+        expect(getBoardResultsFromValues(VALUES)).toEqual({
             ended: true,
             won: true,
             draw: false,
@@ -25,7 +25,7 @@ describe('Engine utils. Game result', () => {
             X, X, O,
             O, O, X,
         ].map(val);
-        expect(getGameResults(VALUES)).toEqual({
+        expect(getBoardResultsFromValues(VALUES)).toEqual({
             ended: true,
             won: false,
             draw: true,
@@ -40,7 +40,7 @@ describe('Engine utils. Game result', () => {
             _, _, _,
             _, _, _,
         ].map(val);
-        expect(getGameResults(VALUES)).toEqual({
+        expect(getBoardResultsFromValues(VALUES)).toEqual({
             ended: false,
             won: false,
             draw: false,
@@ -55,7 +55,7 @@ describe('Engine utils. Game result', () => {
             _, X, O,
             _, _, _,
         ].map(val);
-        expect(getGameResults(VALUES)).toEqual({
+        expect(getBoardResultsFromValues(VALUES)).toEqual({
             ended: false,
             won: false,
             draw: false,
@@ -70,7 +70,7 @@ describe('Engine utils. Game result', () => {
             _, _, O,
             _, _, _,
         ].map(val);
-        expect(getGameResults(VALUES)).toEqual({
+        expect(getBoardResultsFromValues(VALUES)).toEqual({
             ended: false,
             won: false,
             draw: false,
@@ -85,7 +85,7 @@ describe('Engine utils. Game result', () => {
             O, X, _,
             O, _, X,
         ].map(val);
-        expect(getGameResults(VALUES)).toEqual({
+        expect(getBoardResultsFromValues(VALUES)).toEqual({
             ended: true,
             won: true,
             draw: false,
@@ -100,7 +100,7 @@ describe('Engine utils. Game result', () => {
             X, O, _,
             _, O, X,
         ].map(val);
-        expect(getGameResults(VALUES)).toEqual({
+        expect(getBoardResultsFromValues(VALUES)).toEqual({
             ended: true,
             won: true,
             draw: false,
@@ -115,7 +115,7 @@ describe('Engine utils. Game result', () => {
             O, O, X,
             O, O, X,
         ].map(val);
-        expect(getGameResults(VALUES)).toEqual({
+        expect(getBoardResultsFromValues(VALUES)).toEqual({
             ended: true,
             won: true,
             draw: false,
@@ -131,7 +131,7 @@ describe('Engine utils. Game result', () => {
             _, O, _,
             _, _, O,
         ].map(val);
-        expect(getGameResults(VALUES)).toEqual({
+        expect(getBoardResultsFromValues(VALUES)).toEqual({
             ended: true,
             won: true,
             draw: false,
@@ -146,7 +146,7 @@ describe('Engine utils. Game result', () => {
             O, O, O,
             _, _, _,
         ].map(val);
-        expect(getGameResults(VALUES)).toEqual({
+        expect(getBoardResultsFromValues(VALUES)).toEqual({
             ended: true,
             won: true,
             draw: false,
@@ -161,7 +161,7 @@ describe('Engine utils. Game result', () => {
             _, _, _,
             X, X, X,
         ].map(val);
-        expect(getGameResults(VALUES)).toEqual({
+        expect(getBoardResultsFromValues(VALUES)).toEqual({
             ended: true,
             won: true,
             draw: false,
@@ -176,7 +176,7 @@ describe('Engine utils. Game result', () => {
             _, O, _,
             _, _, O,
         ].map(val);
-        expect(getGameResults(VALUES)).toEqual({
+        expect(getBoardResultsFromValues(VALUES)).toEqual({
             ended: true,
             won: true,
             draw: false,
@@ -191,7 +191,7 @@ describe('Engine utils. Game result', () => {
             _, X, _,
             X, _, _,
         ].map(val);
-        expect(getGameResults(VALUES)).toEqual({
+        expect(getBoardResultsFromValues(VALUES)).toEqual({
             ended: true,
             won: true,
             draw: false,

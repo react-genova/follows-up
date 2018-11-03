@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Grid from '../components/grid/Grid';
 import { getPlayer1Symbol } from '../../settings/modules/selectors';
-import { getBoardValues } from '../modules/selectors';
+import { getBoardValues, getWinningSequence } from '../modules/selectors';
 import { addBoardMove } from '../modules/action.creators';
 import { valuesPropTypes, playingTypePropTypes } from '../components/grid/Grid.types';
 import { isGameStarted } from '../../game/engine/selectors';
@@ -18,8 +18,14 @@ class BoardContainer extends Component {
     }
 
     render() {
-        const { values, playingType } = this.props;
-        return (<Grid values={values} playingType={playingType} onCellClick={this.onCellClick} />);
+        const { highlightSequence, values, playingType } = this.props;
+        return (
+            <Grid
+                values={values}
+                playingType={playingType}
+                onCellClick={this.onCellClick}
+                highlightSequence={highlightSequence}
+            />);
     }
 }
 
@@ -28,6 +34,7 @@ BoardContainer.propTypes = {
     playingType: playingTypePropTypes.isRequired,
     values: valuesPropTypes.isRequired,
     gameStarted: PropTypes.bool.isRequired,
+    highlightSequence: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 BoardContainer.defaultProps = {
@@ -38,6 +45,7 @@ export const mapStateToProps = state => ({
     values: getBoardValues(state),
     playingType: getPlayer1Symbol(state),
     gameStarted: isGameStarted(state),
+    highlightSequence: getWinningSequence(state),
 });
 
 export const mapDispatchToProps = {

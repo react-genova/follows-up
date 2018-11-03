@@ -8,14 +8,25 @@ describe('GridCell component', () => {
     afterEach(cleanup);
 
     it('renders without crashing', () => {
-        const { container } = render(<GridCell index={0} value={SIGN_O} valid playingType={SIGN_X} />);
+        const { container } = render(
+            <GridCell index={0} value={SIGN_O} valid playingType={SIGN_X} highlight />,
+        );
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it('renders without crashing', () => {
         const onClick = jest.fn();
         const INDEX = 43;
-        const { container } = render(<GridCell index={INDEX} value={SIGN_O} valid playingType={SIGN_X} onClick={onClick} />);
+        const { container } = render(
+            <GridCell
+                index={INDEX}
+                value={SIGN_O}
+                valid
+                playingType={SIGN_X}
+                onClick={onClick}
+                highlight={false}
+            />,
+        );
         fireEvent.click(container.firstChild.firstChild);
         expect(onClick).toHaveBeenCalledTimes(1);
         expect(onClick).toHaveBeenCalledWith(INDEX);

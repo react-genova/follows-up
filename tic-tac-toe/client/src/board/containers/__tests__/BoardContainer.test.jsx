@@ -3,7 +3,7 @@ import { render, fireEvent, cleanup } from 'react-testing-library';
 import 'jest-dom/extend-expect';
 import { BoardContainer, mapStateToProps, mapDispatchToProps } from '../BoardContainer';
 import { getPlayer1Symbol } from '../../../settings/modules/selectors';
-import { getBoardValues } from '../../modules/selectors';
+import { getBoardValues, getWinningSequence } from '../../modules/selectors';
 import { addBoardMove } from '../../modules/action.creators';
 import { SIGN_X, SIGN_O, SIGN_NONE } from '../../modules/types/signs.constants';
 import { isGameStarted } from '../../../game/engine/selectors';
@@ -28,17 +28,23 @@ describe('Board conatiner', () => {
         getPlayer1Symbol.mockImplementation(() => PLAYER_1_SYMBOL);
         getBoardValues.mockImplementation(() => BOARD_VALUES);
         isGameStarted.mockImplementation(() => true);
+        getWinningSequence.mockImplementation(() => [42, 9000]);
         // invoking the method to test
         const props = mapStateToProps(STATE);
         // check result
         expect(getPlayer1Symbol).toHaveBeenCalledTimes(1);
         expect(getBoardValues).toHaveBeenCalledTimes(1);
+        expect(isGameStarted).toHaveBeenCalledTimes(1);
+        expect(getWinningSequence).toHaveBeenCalledTimes(1);
         expect(getPlayer1Symbol).toHaveBeenCalledWith(STATE);
         expect(getBoardValues).toHaveBeenCalledWith(STATE);
+        expect(isGameStarted).toHaveBeenCalledWith(STATE);
+        expect(getWinningSequence).toHaveBeenCalledWith(STATE);
         expect(props).toEqual({
             values: BOARD_VALUES,
             playingType: PLAYER_1_SYMBOL,
             gameStarted: true,
+            highlightSequence: [42, 9000],
         });
     });
 
@@ -58,7 +64,13 @@ describe('Board conatiner', () => {
         ];
         const addBoardMoveMocked = jest.fn();
         const { container } = render(
-            <BoardContainer gameStarted values={BOARD_VALUES} playingType={PLAYER_1_SYMBOL} addBoardMove={addBoardMoveMocked} />,
+            <BoardContainer
+                gameStarted
+                values={BOARD_VALUES}
+                playingType={PLAYER_1_SYMBOL}
+                addBoardMove={addBoardMoveMocked}
+                highlightSequence={[1]}
+            />,
         );
         expect(container.firstChild).toMatchSnapshot();
         // click on cell with valid value => no action fired
@@ -85,6 +97,7 @@ describe('Board conatiner', () => {
                 values={BOARD_VALUES}
                 playingType={PLAYER_1_SYMBOL}
                 addBoardMove={addBoardMoveMocked}
+                highlightSequence={[]}
             />,
         );
         // click on cell with not valid value => action should have been fired, when game is started
