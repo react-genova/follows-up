@@ -1,8 +1,9 @@
 import {
     getPlayer1Name, getPlayer1Symbol, getPlayer1Ready, getPlayer1Type,
     getPlayer2Name, getPlayer2Symbol, getPlayer2Ready, getPlayer2Type,
+    getAutoplay, getBotSpeed,
 } from '../selectors';
-import { PlayerRecord, SettingsRecord } from '../types/settings.types';
+import { OptionsRecord, PlayerRecord, SettingsRecord } from '../types/settings.types';
 
 describe('Settings selectors', () => {
 
@@ -19,6 +20,10 @@ describe('Settings selectors', () => {
             symbol: 'twosymbol',
             ready: true,
         }),
+        options: new OptionsRecord({
+            autoplay: true,
+            botSpeed: 3,
+        }),
     });
 
     it('retrieves player 1 settings', () => {
@@ -33,5 +38,10 @@ describe('Settings selectors', () => {
         expect(getPlayer2Ready(STATE)).toBe(true);
         expect(getPlayer2Symbol(STATE)).toBe('twosymbol');
         expect(getPlayer2Type(STATE)).toBe('twotype');
+    });
+
+    it('retrieves options', () => {
+        expect(getAutoplay(STATE)).toBe(true);
+        expect(getBotSpeed(STATE)).toBe(3);
     });
 });

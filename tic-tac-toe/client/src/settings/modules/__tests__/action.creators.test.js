@@ -1,5 +1,9 @@
-import { UPDATE_PLAYERS, UPDATE_PLAYER_1, UPDATE_PLAYER_2 } from '../action.definitions';
-import { updatePlayers, updatePlayer1, updatePlayer2 } from '../action.creators';
+import {
+    UPDATE_PLAYERS, UPDATE_PLAYER_1, UPDATE_PLAYER_2, CHANGE_AUTOPLAY, CHANGE_BOT_SPEED,
+} from '../action.definitions';
+import {
+    updatePlayers, updatePlayer1, updatePlayer2, changeAutoplay, changeBotSpeed,
+} from '../action.creators';
 import { MOVING_SYMBOL_O, MOVING_SYMBOL_X } from '../types/moving.symbols.constants';
 import { PLAYER_TYPE_HUMAN, PLAYER_TYPE_MACHINE } from '../types/player.types.constants';
 
@@ -50,4 +54,31 @@ describe('Settings action creators', () => {
             },
         });
     });
+
+    it('creates a valid changeAutoplay action (true)', () => {
+        expect(changeAutoplay(true)).toEqual({
+            type: CHANGE_AUTOPLAY,
+            payload: {
+                autoplay: true,
+            },
+        });
+    });
+
+    it('creates a valid changeAutoplay action (false)', () => {
+        expect(changeAutoplay(false)).toEqual({
+            type: CHANGE_AUTOPLAY,
+            payload: {
+                autoplay: false,
+            },
+        });
+    });
+
+    it('creates a valid changeBotSpeed action', () => {
+        expect(changeBotSpeed(6)).toEqual({
+            type: CHANGE_BOT_SPEED,
+            payload: {
+                botSpeed: 6,
+            },
+        });
+    });    
 });

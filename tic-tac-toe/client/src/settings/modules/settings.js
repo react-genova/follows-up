@@ -1,5 +1,7 @@
 import { initialSettingsState, PlayerRecord } from './types/settings.types';
-import { UPDATE_PLAYER_1, UPDATE_PLAYER_2, UPDATE_PLAYERS } from './action.definitions';
+import {
+    UPDATE_PLAYER_1, UPDATE_PLAYER_2, UPDATE_PLAYERS, CHANGE_AUTOPLAY, CHANGE_BOT_SPEED,
+} from './action.definitions';
 
 const updatePlayer = (state, payload, player) => state.set(player, new PlayerRecord(payload));
 
@@ -18,6 +20,10 @@ const settings = (state = initialSettingsState, action = {}) => {
         return updatePlayer(state, payload, 'player2');
     case UPDATE_PLAYERS:
         return updatePlayers(state, payload);
+    case CHANGE_AUTOPLAY:
+        return state.setIn(['options', 'autoplay'], payload.autoplay);
+    case CHANGE_BOT_SPEED:
+        return state.setIn(['options', 'botSpeed'], payload.botSpeed);
     default:
         return state;
     }

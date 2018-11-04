@@ -1,7 +1,9 @@
 import * as matchers from 'jest-immutable-matchers';
 import settings from '../settings';
 import { initialSettingsState, PlayerRecord, SettingsRecord } from '../types/settings.types';
-import { updatePlayers, updatePlayer1, updatePlayer2 } from '../action.creators';
+import {
+    updatePlayers, updatePlayer1, updatePlayer2, changeAutoplay, changeBotSpeed,
+} from '../action.creators';
 import { MOVING_SYMBOL_O, MOVING_SYMBOL_X } from '../types/moving.symbols.constants';
 import { PLAYER_TYPE_HUMAN, PLAYER_TYPE_MACHINE } from '../types/player.types.constants';
 
@@ -65,5 +67,23 @@ describe('Settings reducer', () => {
             player1,
             player2,
         }));
+    });
+
+    it('changes autoplay to true than to false finally to true again', () => {
+        const STATE = new SettingsRecord();
+        const STATE_1 = settings(STATE, changeAutoplay(true));
+        expect(STATE_1).toEqualImmutable(STATE.setIn(['options', 'autoplay'], true));
+        const STATE_2 = settings(STATE_1, changeAutoplay(false));
+        expect(STATE_2).toEqualImmutable(STATE_1.setIn(['options', 'autoplay'], false));
+        const STATE_3 = settings(STATE_2, changeAutoplay(true));
+        expect(STATE_3).toEqualImmutable(STATE_2.setIn(['options', 'autoplay'], true));
+    });
+
+    it('changes botSpeed twice', () => {
+        const STATE = new SettingsRecord();
+        const STATE_1 = settings(STATE, changeBotSpeed(6));
+        expect(STATE_1).toEqualImmutable(STATE.setIn(['options', 'botSpeed'], 6));
+        const STATE_2 = settings(STATE_1, changeBotSpeed(2));
+        expect(STATE_2).toEqualImmutable(STATE_1.setIn(['options', 'botSpeed'], 2));
     });
 });

@@ -1,4 +1,6 @@
-import { UPDATE_PLAYERS, UPDATE_PLAYER_1, UPDATE_PLAYER_2 } from './action.definitions';
+import {
+    UPDATE_PLAYERS, UPDATE_PLAYER_1, UPDATE_PLAYER_2, CHANGE_AUTOPLAY, CHANGE_BOT_SPEED,
+} from './action.definitions';
 
 export const updatePlayer1 = (type, symbol, name) => ({
     type: UPDATE_PLAYER_1,
@@ -36,4 +38,14 @@ export const updatePlayers = (type1, symbol1, name1, type2, symbol2, name2) => (
             ready: true,
         },
     },
+});
+
+export const changeAutoplay = autoplay => ({
+    type: CHANGE_AUTOPLAY,
+    payload: { autoplay },
+});
+
+export const changeBotSpeed = botSpeed => ({
+    type: CHANGE_BOT_SPEED,
+    payload: { botSpeed },
 });
