@@ -1,18 +1,20 @@
 import { cleanup } from 'react-testing-library';
 import middleware from '../engineMiddleware';
 import {
-    getPlayer1Ready, getPlayer2Ready, getPlayer1Symbol, getPlayer2Symbol,
+    getPlayer1Ready, getPlayer2Ready, getPlayer1Symbol, getPlayer2Symbol, getAutoplay,
 } from '../../../../settings/modules/selectors';
 import { isGameStarted, isGameIdle } from '../selectors';
 import { beginGame, endGame } from '../action.creators';
 import { SIGN_NONE } from '../../../../board/modules/types/signs.constants';
 import { PLAYER_1_WON, PLAYER_2_WON, DRAW } from '../types/game.results.constants';
 import { getBoardResults } from '../../../../board/modules/selectors';
+import { asyncDispatch } from '../../_common/utils.unsafe';
 
 jest.mock('../../../../settings/modules/selectors');
 jest.mock('../selectors');
 jest.mock('../action.creators');
 jest.mock('../../../../board/modules/selectors');
+jest.mock('../../_common/utils.unsafe');
 
 describe('Engine middleware', () => {
     afterEach(() => {
@@ -46,7 +48,7 @@ describe('Engine middleware', () => {
         expect(next).toHaveBeenCalledWith(action);
     });
 
-    it('generates endGame action if player 1 won', () => {
+    it('generates endGame action if player 1 won and does not fire beginGame', () => {
         const next = jest.fn();
         const store = { getState: jest.fn(), dispatch: jest.fn() };
         const action = { type: 'ANY ACTION' };
@@ -61,6 +63,8 @@ describe('Engine middleware', () => {
         };
         const endGameAction = endGame(PLAYER_1_WON);
         getBoardResults.mockImplementation(() => MATCH_RESULTS_P1WON);
+        asyncDispatch.mockImplementation(() => null);
+        getAutoplay.mockImplementation(() => false);
         // executing
         middleware(store)(next)(action);
         // checking results
@@ -68,6 +72,34 @@ describe('Engine middleware', () => {
         expect(next).toHaveBeenCalledWith(action);
         expect(store.dispatch).toHaveBeenCalledTimes(1);
         expect(store.dispatch).toHaveBeenLastCalledWith(endGameAction);
+        expect(asyncDispatch).toHaveBeenCalledTimes(0);
+    });
+
+    it('generates endGame action if player 1 won and fires beginGame', () => {
+        const next = jest.fn();
+        const store = { getState: jest.fn(), dispatch: jest.fn() };
+        const action = { type: 'ANY ACTION' };
+        isGameStarted.mockImplementation(() => true);
+        getPlayer1Symbol.mockImplementation(() => 'X');
+        getPlayer2Symbol.mockImplementation(() => 'O');
+        const MATCH_RESULTS_P1WON = {
+            ...MATCH_RESULTS_NO_ENDED,
+            won: true,
+            ended: true,
+            winner: 'X',
+        };
+        const endGameAction = endGame(PLAYER_1_WON);
+        getBoardResults.mockImplementation(() => MATCH_RESULTS_P1WON);
+        asyncDispatch.mockImplementation(() => null);
+        getAutoplay.mockImplementation(() => true);
+        // executing
+        middleware(store)(next)(action);
+        // checking results
+        expect(next).toHaveBeenCalledTimes(1);
+        expect(next).toHaveBeenCalledWith(action);
+        expect(store.dispatch).toHaveBeenCalledTimes(1);
+        expect(store.dispatch).toHaveBeenLastCalledWith(endGameAction);
+        expect(asyncDispatch).toHaveBeenCalledTimes(1);
     });
 
     it('generates endGame action if player 1 won', () => {

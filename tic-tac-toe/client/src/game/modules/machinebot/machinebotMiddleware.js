@@ -5,13 +5,14 @@ import {
 import { PLAYER_TYPE_MACHINE } from '../../../settings/modules/types/player.types.constants';
 import { addBoardMove } from '../../../board/modules/action.creators';
 import { getBoardValues } from '../../../board/modules/selectors';
-import { makeARandomMove, asyncDispatch } from './machinebotMiddleware.unsafe';
+import { makeARandomMove } from './machinebotMiddleware.unsafe';
+import { asyncDispatch } from '../_common/utils.unsafe';
 import { BEGIN_GAME } from '../engine/action.definitions';
 import { isGameStarted } from '../engine/selectors';
 
 const dispatchMachineMove = (dispatch, sign, playerType, playerSymbol, nextMove) => {
     if (PLAYER_TYPE_MACHINE === playerType && sign !== playerSymbol) {
-        asyncDispatch(dispatch, addBoardMove(nextMove, playerSymbol));
+        asyncDispatch(dispatch, addBoardMove(nextMove, playerSymbol), 300);
     }
 };
 
