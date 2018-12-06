@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html><head><title>selectors.js
+ - Stryker report</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../strykerResources/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../strykerResources/highlightjs/styles/default.css">
+<link rel="stylesheet" href="../../strykerResources/stryker.css"></head>
+<body><img class="stryker-image" alt="Stryker" src="../../strykerResources/stryker-80x80.png">
+<div class="container-fluid"><div class="row"><div class="col-lg-12"><h1 class="display-4">selectors.js
+ 
+<small class="text-muted">- Stryker report</small></h1></div></div>
+<ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index.html">All files</a></li><li class="breadcrumb-item"><a href="index.html">settings/modules</a></li>
+<li class="breadcrumb-item active">selectors.js</li></ol>
+<div class="row"><div class="col-lg-12"><div class="row"><div class="col-sm-11"><table class="table table-sm table-hover table-bordered table-no-top"><thead><tr><th style="width: 20%"><div><span>File / Directory</span></div></th>
+<th colspan="2"><div><span>Mutation score</span></div></th>
+<th class="rotate text-center" style="width: 50px"><div><span># Killed</span></div></th>
+<th class="rotate text-center" style="width: 50px"><div><span># Survived</span></div></th>
+<th class="rotate text-center" style="width: 50px"><div><span># Timeout</span></div></th>
+<th class="rotate text-center" style="width: 50px"><div><span># No coverage</span></div></th>
+<th class="rotate text-center" style="width: 50px"><div><span># Runtime errors</span></div></th>
+<th class="rotate text-center" style="width: 50px"><div><span># Transpile errors</span></div></th>
+<th class="rotate rotate-width-70 text-center" style="width: 70px"><div><span>Total detected</span></div></th>
+<th class="rotate rotate-width-70 text-center" style="width: 70px"><div><span>Total undetected</span></div></th>
+<th class="rotate rotate-width-70 text-center" style="width: 70px"><div><span>Total mutants</span></div></th></tr></thead>
+<tbody><tr><td>selectors.js</td>
+<td><div class="progress"><div class="progress-bar bg-success" role="progressbar" aria-valuenow="96.30" aria-valuemin="0" aria-valuemax="100" style="width: 96.30%;">96.30
+%</div></div></td>
+<th class="text-center text-success" style="width: 10%">96.30</th>
+<td class="text-center">26</td>
+<td class="text-center">1</td>
+<td class="text-center">0</td>
+<td class="text-center">0</td>
+<td class="text-center">0</td>
+<td class="text-center">0</td>
+<th class="text-center">26</th>
+<th class="text-center">1</th>
+<th class="text-center">27</th></tr>
+</tbody></table></div></div>
+<div class="row"><div class="col-lg-7"><div class="row legend"><form class="col-md-12" novalidate="novalidate">
+<div class="form-check form-check-inline"><label class="form-check-label"><input class="form-check-input stryker-display" checked value="2" type="checkbox">
+Survived
+ 
+(1)</label></div>
+<div class="form-check form-check-inline"><label class="form-check-label"><input class="form-check-input stryker-display" value="1" type="checkbox">
+Killed
+ 
+(26)</label></div>
+
+
+
+<a href="#" class="stryker-collapse-expand-all">Expand all</a></form></div>
+<pre><code class="lang-javascript"><span class="bg-null">import { createSelector } from &#039;reselect&#039;;
+
+let getSettingsRoot = state =&gt; state;
+
+export const setSettingsRoot = (getter) =&gt; </span><a href="#" class="stryker-mutant-button" tabindex="0" title="Block" data-content="status: Survived" data-mutant-status-annotation="danger" data-mutant-status="2" data-mutant="0"><span class="badge badge-danger">0</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="0">{}</span><span class="stryker-original-code" data-mutant="0"><span class="bg-danger-light">{
+    getSettingsRoot = getter;
+}</span></span><span class="bg-null">;
+
+const getSettings = state =&gt; getSettingsRoot(state);
+
+const getPlayer1 = createSelector(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="ArrayLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="1"><span class="badge badge-success">1</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="1">[]</span><span class="stryker-original-code" data-mutant="1"><span class="bg-success-light">[getSettings]</span></span><span class="bg-null">, settings =&gt; settings.get(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="2"><span class="badge badge-success">2</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="2">&quot;&quot;</span><span class="stryker-original-code" data-mutant="2"><span class="bg-success-light">&#039;player1&#039;</span></span><span class="bg-null">));
+
+const getPlayer2 = createSelector(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="ArrayLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="3"><span class="badge badge-success">3</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="3">[]</span><span class="stryker-original-code" data-mutant="3"><span class="bg-success-light">[getSettings]</span></span><span class="bg-null">, settings =&gt; settings.get(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="4"><span class="badge badge-success">4</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="4">&quot;&quot;</span><span class="stryker-original-code" data-mutant="4"><span class="bg-success-light">&#039;player2&#039;</span></span><span class="bg-null">));
+
+const getOptions = createSelector(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="ArrayLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="5"><span class="badge badge-success">5</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="5">[]</span><span class="stryker-original-code" data-mutant="5"><span class="bg-success-light">[getSettings]</span></span><span class="bg-null">, settings =&gt; settings.get(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="6"><span class="badge badge-success">6</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="6">&quot;&quot;</span><span class="stryker-original-code" data-mutant="6"><span class="bg-success-light">&#039;options&#039;</span></span><span class="bg-null">));
+
+export const getPlayer1Name = createSelector(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="ArrayLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="7"><span class="badge badge-success">7</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="7">[]</span><span class="stryker-original-code" data-mutant="7"><span class="bg-success-light">[getPlayer1]</span></span><span class="bg-null">, player1 =&gt; player1.get(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="8"><span class="badge badge-success">8</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="8">&quot;&quot;</span><span class="stryker-original-code" data-mutant="8"><span class="bg-success-light">&#039;name&#039;</span></span><span class="bg-null">));
+
+export const getPlayer1Symbol = createSelector(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="ArrayLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="9"><span class="badge badge-success">9</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="9">[]</span><span class="stryker-original-code" data-mutant="9"><span class="bg-success-light">[getPlayer1]</span></span><span class="bg-null">, player1 =&gt; player1.get(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="10"><span class="badge badge-success">10</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="10">&quot;&quot;</span><span class="stryker-original-code" data-mutant="10"><span class="bg-success-light">&#039;symbol&#039;</span></span><span class="bg-null">));
+
+export const getPlayer1Ready = createSelector(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="ArrayLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="11"><span class="badge badge-success">11</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="11">[]</span><span class="stryker-original-code" data-mutant="11"><span class="bg-success-light">[getPlayer1]</span></span><span class="bg-null">, player1 =&gt; player1.get(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="12"><span class="badge badge-success">12</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="12">&quot;&quot;</span><span class="stryker-original-code" data-mutant="12"><span class="bg-success-light">&#039;ready&#039;</span></span><span class="bg-null">));
+
+export const getPlayer1Type = createSelector(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="ArrayLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="13"><span class="badge badge-success">13</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="13">[]</span><span class="stryker-original-code" data-mutant="13"><span class="bg-success-light">[getPlayer1]</span></span><span class="bg-null">, player1 =&gt; player1.get(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="14"><span class="badge badge-success">14</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="14">&quot;&quot;</span><span class="stryker-original-code" data-mutant="14"><span class="bg-success-light">&#039;type&#039;</span></span><span class="bg-null">));
+
+export const getPlayer2Name = createSelector(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="ArrayLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="15"><span class="badge badge-success">15</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="15">[]</span><span class="stryker-original-code" data-mutant="15"><span class="bg-success-light">[getPlayer2]</span></span><span class="bg-null">, player2 =&gt; player2.get(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="16"><span class="badge badge-success">16</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="16">&quot;&quot;</span><span class="stryker-original-code" data-mutant="16"><span class="bg-success-light">&#039;name&#039;</span></span><span class="bg-null">));
+
+export const getPlayer2Symbol = createSelector(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="ArrayLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="17"><span class="badge badge-success">17</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="17">[]</span><span class="stryker-original-code" data-mutant="17"><span class="bg-success-light">[getPlayer2]</span></span><span class="bg-null">, player2 =&gt; player2.get(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="18"><span class="badge badge-success">18</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="18">&quot;&quot;</span><span class="stryker-original-code" data-mutant="18"><span class="bg-success-light">&#039;symbol&#039;</span></span><span class="bg-null">));
+
+export const getPlayer2Ready = createSelector(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="ArrayLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="19"><span class="badge badge-success">19</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="19">[]</span><span class="stryker-original-code" data-mutant="19"><span class="bg-success-light">[getPlayer2]</span></span><span class="bg-null">, player2 =&gt; player2.get(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="20"><span class="badge badge-success">20</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="20">&quot;&quot;</span><span class="stryker-original-code" data-mutant="20"><span class="bg-success-light">&#039;ready&#039;</span></span><span class="bg-null">));
+
+export const getPlayer2Type = createSelector(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="ArrayLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="21"><span class="badge badge-success">21</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="21">[]</span><span class="stryker-original-code" data-mutant="21"><span class="bg-success-light">[getPlayer2]</span></span><span class="bg-null">, player2 =&gt; player2.get(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="22"><span class="badge badge-success">22</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="22">&quot;&quot;</span><span class="stryker-original-code" data-mutant="22"><span class="bg-success-light">&#039;type&#039;</span></span><span class="bg-null">));
+
+export const getAutoplay = createSelector(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="ArrayLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="23"><span class="badge badge-success">23</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="23">[]</span><span class="stryker-original-code" data-mutant="23"><span class="bg-success-light">[getOptions]</span></span><span class="bg-null">, options =&gt; options.get(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="24"><span class="badge badge-success">24</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="24">&quot;&quot;</span><span class="stryker-original-code" data-mutant="24"><span class="bg-success-light">&#039;autoplay&#039;</span></span><span class="bg-null">));
+
+export const getBotSpeed = createSelector(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="ArrayLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="25"><span class="badge badge-success">25</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="25">[]</span><span class="stryker-original-code" data-mutant="25"><span class="bg-success-light">[getOptions]</span></span><span class="bg-null">, options =&gt; options.get(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="26"><span class="badge badge-success">26</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="26">&quot;&quot;</span><span class="stryker-original-code" data-mutant="26"><span class="bg-success-light">&#039;botSpeed&#039;</span></span><span class="bg-null">));</span>
+</code></pre></div>
+<div class="col-lg-5"><table class="table table-sm table-hover mutant-table"><thead><tr><th>#</th>
+<th>Mutator</th>
+<th>State</th>
+<th>Location</th>
+<th>Original</th>
+<th>Replacement</th></tr></thead>
+<tbody><tr><th>0</th>
+<td>Block</td>
+<td>Survived</td>
+<td>4
+:
+43</td>
+<td><code>{
+   ...  ;
+}</code></td>
+<td><code>{}</code></td></tr>
+<tr><th>1</th>
+<td>ArrayLiteral</td>
+<td>Killed</td>
+<td>10
+:
+34</td>
+<td><code>[           ]</code></td>
+<td><code>[]</code></td></tr>
+<tr><th>2</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>10
+:
+74</td>
+<td><code>'       '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>3</th>
+<td>ArrayLiteral</td>
+<td>Killed</td>
+<td>12
+:
+34</td>
+<td><code>[           ]</code></td>
+<td><code>[]</code></td></tr>
+<tr><th>4</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>12
+:
+74</td>
+<td><code>'       '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>5</th>
+<td>ArrayLiteral</td>
+<td>Killed</td>
+<td>14
+:
+34</td>
+<td><code>[           ]</code></td>
+<td><code>[]</code></td></tr>
+<tr><th>6</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>14
+:
+74</td>
+<td><code>'       '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>7</th>
+<td>ArrayLiteral</td>
+<td>Killed</td>
+<td>16
+:
+45</td>
+<td><code>[          ]</code></td>
+<td><code>[]</code></td></tr>
+<tr><th>8</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>16
+:
+82</td>
+<td><code>'    '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>9</th>
+<td>ArrayLiteral</td>
+<td>Killed</td>
+<td>18
+:
+47</td>
+<td><code>[          ]</code></td>
+<td><code>[]</code></td></tr>
+<tr><th>10</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>18
+:
+84</td>
+<td><code>'      '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>11</th>
+<td>ArrayLiteral</td>
+<td>Killed</td>
+<td>20
+:
+46</td>
+<td><code>[          ]</code></td>
+<td><code>[]</code></td></tr>
+<tr><th>12</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>20
+:
+83</td>
+<td><code>'     '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>13</th>
+<td>ArrayLiteral</td>
+<td>Killed</td>
+<td>22
+:
+45</td>
+<td><code>[          ]</code></td>
+<td><code>[]</code></td></tr>
+<tr><th>14</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>22
+:
+82</td>
+<td><code>'    '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>15</th>
+<td>ArrayLiteral</td>
+<td>Killed</td>
+<td>24
+:
+45</td>
+<td><code>[          ]</code></td>
+<td><code>[]</code></td></tr>
+<tr><th>16</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>24
+:
+82</td>
+<td><code>'    '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>17</th>
+<td>ArrayLiteral</td>
+<td>Killed</td>
+<td>26
+:
+47</td>
+<td><code>[          ]</code></td>
+<td><code>[]</code></td></tr>
+<tr><th>18</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>26
+:
+84</td>
+<td><code>'      '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>19</th>
+<td>ArrayLiteral</td>
+<td>Killed</td>
+<td>28
+:
+46</td>
+<td><code>[          ]</code></td>
+<td><code>[]</code></td></tr>
+<tr><th>20</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>28
+:
+83</td>
+<td><code>'     '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>21</th>
+<td>ArrayLiteral</td>
+<td>Killed</td>
+<td>30
+:
+45</td>
+<td><code>[          ]</code></td>
+<td><code>[]</code></td></tr>
+<tr><th>22</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>30
+:
+82</td>
+<td><code>'    '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>23</th>
+<td>ArrayLiteral</td>
+<td>Killed</td>
+<td>32
+:
+42</td>
+<td><code>[          ]</code></td>
+<td><code>[]</code></td></tr>
+<tr><th>24</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>32
+:
+79</td>
+<td><code>'        '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>25</th>
+<td>ArrayLiteral</td>
+<td>Killed</td>
+<td>34
+:
+42</td>
+<td><code>[          ]</code></td>
+<td><code>[]</code></td></tr>
+<tr><th>26</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>34
+:
+79</td>
+<td><code>'        '</code></td>
+<td><code>""</code></td></tr></tbody></table></div></div></div></div>
+<footer>Generated with stryker-html-reporter generator. Visit the 
+<a href="https://stryker-mutator.io" target="_blank">Stryker website</a></footer></div>
+<script src="../../strykerResources/popper.js/dist/umd/popper.min.js" defer="defer"></script>
+<script src="../../strykerResources/jquery/dist/jquery.slim.min.js" defer="defer"></script>
+<script src="../../strykerResources/bootstrap/js/bootstrap.min.js" defer="defer"></script>
+<script src="../../strykerResources/stryker.js" defer="defer"></script></body></html>

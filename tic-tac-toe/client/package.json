@@ -47,7 +47,13 @@
     "jest-dom": "^2.1.0",
     "jest-immutable-matchers": "^2.0.1",
     "react-styleguidist": "^8.0.2",
-    "react-testing-library": "^5.2.3"
+    "react-testing-library": "^5.2.3",
+    "stryker": "^0.33.1",
+    "stryker-api": "^0.22.0",
+    "stryker-cli": "^0.2.0",
+    "stryker-html-reporter": "^0.16.9",
+    "stryker-javascript-mutator": "^0.12.1",
+    "stryker-jest-runner": "^1.2.9"
   },
   "peerDependencies": {
     "prop-types": "15.6.2"
