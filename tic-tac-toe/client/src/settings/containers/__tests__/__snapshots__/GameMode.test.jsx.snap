@@ -5,7 +5,7 @@ exports[`GameMode component renders without crashing 1`] = `
   class="sc-ifAKCX kTuGpj"
 >
   <div
-    class="sc-htpNat gHQuFj"
+    class="game-human-machine sc-htpNat gHQuFj"
   >
     <div
       class="sc-bwzfXH eLlMqI"
@@ -157,7 +157,7 @@ exports[`GameMode component renders without crashing 1`] = `
     class="sc-bxivhb gJLNWv"
   />
   <div
-    class="sc-htpNat gHQuFj"
+    class="game-machine-machine sc-htpNat gHQuFj"
   >
     <div
       class="sc-bwzfXH eLlMqI"
@@ -377,7 +377,7 @@ exports[`GameMode component renders without crashing 1`] = `
     class="sc-bxivhb gJLNWv"
   />
   <div
-    class="sc-htpNat gHQuFj"
+    class="game-human-human sc-htpNat gHQuFj"
   >
     <div
       class="sc-bwzfXH eLlMqI"

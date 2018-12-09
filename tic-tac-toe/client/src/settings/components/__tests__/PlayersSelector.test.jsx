@@ -22,14 +22,14 @@ describe('PlayersSelector component', () => {
         const CHILDREN = jest.fn();
         const onClick = jest.fn();
         const { container } = render(
-            <PlayersSelector onClick={onClick}>{CHILDREN}</PlayersSelector>
+            <PlayersSelector className="test" onClick={onClick}>{CHILDREN}</PlayersSelector>,
         );
-
-        fireEvent.click(container.firstChild);
+        const element = container.querySelector('.test');
+        fireEvent.click(element);
         expect(onClick).toHaveBeenCalledTimes(1);
 
-        fireEvent.mouseEnter(container.firstChild);
-        fireEvent.mouseLeave(container.firstChild);
+        fireEvent.mouseEnter(element);
+        fireEvent.mouseLeave(element);
         expect(CHILDREN).toHaveBeenCalledTimes(3);
         expect(CHILDREN).toHaveBeenCalledWith('#909090');
         expect(CHILDREN).toHaveBeenCalledWith('#E0E0E0');

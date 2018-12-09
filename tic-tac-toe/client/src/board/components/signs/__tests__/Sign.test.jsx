@@ -29,20 +29,22 @@ describe('SignO component', () => {
 
     it('invokes click callback', () => {
         const onClick = jest.fn();
-        const { container } = render(<Sign hasValue type={SIGN_X} onClick={onClick} />);
-        fireEvent.click(container.firstChild);
+        const { container } = render(<Sign className="sign-test" hasValue type={SIGN_X} onClick={onClick} />);
+        fireEvent.click(container.querySelector('.sign-test'));
         expect(onClick).toHaveBeenCalledTimes(1);
     });
 
     it('simulates hover active without value', () => {
         const onClick = jest.fn();
-        const { container } = render(<Sign type={SIGN_X} onClick={onClick} />);
-        fireEvent.mouseEnter(container.firstChild);
+        const { container } = render(<Sign className="sign-test" type={SIGN_X} onClick={onClick} />);
+        fireEvent.mouseEnter(container.querySelector('.sign-test'));
         expect(container.firstChild).toMatchSnapshot();
-        expect(container.firstChild.childNodes.length).toBe(1);
-        fireEvent.mouseLeave(container.firstChild);
+        expect(container.querySelectorAll('.sign-x').length).toBe(1);
+        expect(container.querySelectorAll('.sign-o').length).toBe(0);
+        fireEvent.mouseLeave(container.querySelector('.sign-test'));
         expect(container.firstChild).toMatchSnapshot();
-        expect(container.firstChild.childNodes.length).toBe(0);
+        expect(container.querySelectorAll('.sign-x').length).toBe(0);
+        expect(container.querySelectorAll('.sign-o').length).toBe(0);
         expect(onClick).toHaveBeenCalledTimes(0);
     });
 });

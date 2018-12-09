@@ -19,7 +19,7 @@ class GameMode extends Component {
     render() {
         return (
             <GameModeContainer>
-                <PlayersSelector onClick={this.invokeUpdate(PLAYER_TYPE_HUMAN, PLAYER_TYPE_MACHINE)}>
+                <PlayersSelector className="game-human-machine" onClick={this.invokeUpdate(PLAYER_TYPE_HUMAN, PLAYER_TYPE_MACHINE)}>
                     {
                         color => (
                             <Fragment>
@@ -31,7 +31,7 @@ class GameMode extends Component {
                     }
                 </PlayersSelector>
                 <Separator />
-                <PlayersSelector onClick={this.invokeUpdate(PLAYER_TYPE_MACHINE, PLAYER_TYPE_MACHINE)}>
+                <PlayersSelector className="game-machine-machine" onClick={this.invokeUpdate(PLAYER_TYPE_MACHINE, PLAYER_TYPE_MACHINE)}>
                     {
                         color => (
                             <Fragment>
@@ -43,7 +43,7 @@ class GameMode extends Component {
                     }
                 </PlayersSelector>
                 <Separator />
-                <PlayersSelector onClick={() => null}>
+                <PlayersSelector className="game-human-human" onClick={() => null}>
                     {
                         color => (
                             <Fragment>

@@ -2,6 +2,7 @@
 
 exports[`SignX component renders without crashing (ghost) 1`] = `
 <svg
+  class="sign-x"
   height="100%"
   viewBox="0 0 100 100"
   width="100%"
@@ -27,6 +28,7 @@ exports[`SignX component renders without crashing (ghost) 1`] = `
 
 exports[`SignX component renders without crashing 1`] = `
 <svg
+  class="sign-x"
   height="100%"
   viewBox="0 0 100 100"
   width="100%"

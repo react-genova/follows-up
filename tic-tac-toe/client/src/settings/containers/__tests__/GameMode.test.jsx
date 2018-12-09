@@ -23,21 +23,21 @@ describe('GameMode component', () => {
 
     it('fires updatePlayers for human vs machine', () => {
         const { container } = render(<GameMode updatePlayers={updatePlayers} />);
-        fireEvent.click(container.firstChild.childNodes[0]);
+        fireEvent.click(container.querySelector('.game-human-machine'));
         expect(updatePlayers).toHaveBeenCalledTimes(1);
         expect(updatePlayers).toHaveBeenCalledWith(PLAYER_TYPE_HUMAN, SIGN_O, 'Player 1', PLAYER_TYPE_MACHINE, SIGN_X, 'Player 2');
     });
 
     it('fires updatePlayers for machine vs machine', () => {
         const { container } = render(<GameMode updatePlayers={updatePlayers} />);
-        fireEvent.click(container.firstChild.childNodes[2]);
+        fireEvent.click(container.querySelector('.game-machine-machine'));
         expect(updatePlayers).toHaveBeenCalledTimes(1);
         expect(updatePlayers).toHaveBeenCalledWith(PLAYER_TYPE_MACHINE, SIGN_O, 'Player 1', PLAYER_TYPE_MACHINE, SIGN_X, 'Player 2');
     });
 
     it('fires updatePlayers for human vs human', () => {
         const { container } = render(<GameMode updatePlayers={updatePlayers} />);
-        fireEvent.click(container.firstChild.childNodes[4]);
+        fireEvent.click(container.querySelector('.game-human-human'));
         expect(updatePlayers).toHaveBeenCalledTimes(0); // STILL NOT SUPPORTED
     });
 });

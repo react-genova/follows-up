@@ -74,9 +74,9 @@ describe('Board conatiner', () => {
         );
         expect(container.firstChild).toMatchSnapshot();
         // click on cell with valid value => no action fired
-        fireEvent.click(container.firstChild.firstChild.firstChild.firstChild);
+        fireEvent.click(container.querySelector('.cell-0'));
         // click on cell with not valid value => action fired
-        fireEvent.click(container.firstChild.firstChild.lastChild.firstChild);
+        fireEvent.click(container.querySelector('.cell-3'));
         expect(addBoardMoveMocked).toHaveBeenCalledTimes(1);
         expect(addBoardMoveMocked).toHaveBeenCalledWith(3, PLAYER_1_SYMBOL);
     });
@@ -101,7 +101,7 @@ describe('Board conatiner', () => {
             />,
         );
         // click on cell with not valid value => action should have been fired, when game is started
-        fireEvent.click(container.firstChild.firstChild.lastChild.firstChild);
+        fireEvent.click(container.querySelector('.cell-3'));
         expect(addBoardMoveMocked).toHaveBeenCalledTimes(0);
     });
 });

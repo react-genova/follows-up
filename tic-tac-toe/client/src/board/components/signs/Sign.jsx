@@ -6,10 +6,13 @@ import SignO from './SignO';
 import SignX from './SignX';
 import { playingTypePropTypes } from '../grid/Grid.types';
 
-const Sign = ({ type, hasValue, onClick }) => {
+const Sign = ({
+    className, hasValue, onClick, type,
+}) => {
     const [hover, setHover] = useState(false);
     return (
         <SignContainer
+            className={className}
             onClick={onClick}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
@@ -25,12 +28,14 @@ const Sign = ({ type, hasValue, onClick }) => {
 };
 
 Sign.propTypes = {
+    className: PropTypes.string,
     hasValue: PropTypes.bool,
     onClick: PropTypes.func,
     type: playingTypePropTypes,
 };
 
 Sign.defaultProps = {
+    className: undefined,
     hasValue: false,
     onClick: undefined,
     type: SIGNS.SIGN_O,

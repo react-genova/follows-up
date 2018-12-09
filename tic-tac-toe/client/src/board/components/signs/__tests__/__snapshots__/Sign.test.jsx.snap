@@ -5,6 +5,7 @@ exports[`SignO component renders O sign with value 1`] = `
   class="sc-bdVaJa hWaRAZ"
 >
   <svg
+    class="sign-o"
     height="100%"
     viewBox="0 0 100 100"
     width="100%"
@@ -27,6 +28,7 @@ exports[`SignO component renders X sign with value 1`] = `
   class="sc-bdVaJa hWaRAZ"
 >
   <svg
+    class="sign-x"
     height="100%"
     viewBox="0 0 100 100"
     width="100%"
@@ -56,6 +58,7 @@ exports[`SignO component renders default sign with value 1`] = `
   class="sc-bdVaJa hWaRAZ"
 >
   <svg
+    class="sign-o"
     height="100%"
     viewBox="0 0 100 100"
     width="100%"
@@ -81,9 +84,10 @@ exports[`SignO component renders without crashing 1`] = `
 
 exports[`SignO component simulates hover active without value 1`] = `
 <div
-  class="sc-bdVaJa hWaRAZ"
+  class="sign-test sc-bdVaJa hWaRAZ"
 >
   <svg
+    class="sign-x"
     height="100%"
     viewBox="0 0 100 100"
     width="100%"
@@ -110,6 +114,6 @@ exports[`SignO component simulates hover active without value 1`] = `
 
 exports[`SignO component simulates hover active without value 2`] = `
 <div
-  class="sc-bdVaJa hWaRAZ"
+  class="sign-test sc-bdVaJa hWaRAZ"
 />
 `;

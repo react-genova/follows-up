@@ -6,9 +6,10 @@ exports[`GridCell component renders without crashing 1`] = `
   type="MOVING_SYMBOL_O"
 >
   <div
-    class="sc-htpNat emEaka"
+    class="cell-0 sc-htpNat emEaka"
   >
     <svg
+      class="sign-o"
       height="100%"
       viewBox="0 0 100 100"
       width="100%"

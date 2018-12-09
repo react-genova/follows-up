@@ -10,7 +10,7 @@
 <div class="container-fluid"><div class="row"><div class="col-lg-12"><h1 class="display-4">machinebotMiddleware.js
  
 <small class="text-muted">- Stryker report</small></h1></div></div>
-<ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../index.html">All files</a></li><li class="breadcrumb-item"><a href="../index.html">game/modules</a></li><li class="breadcrumb-item"><a href="index.html">machinebot</a></li>
+<ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../index.html">All files</a></li><li class="breadcrumb-item"><a href="../index.html">game\modules</a></li><li class="breadcrumb-item"><a href="index.html">machinebot</a></li>
 <li class="breadcrumb-item active">machinebotMiddleware.js</li></ol>
 <div class="row"><div class="col-lg-12"><div class="row"><div class="col-sm-11"><table class="table table-sm table-hover table-bordered table-no-top"><thead><tr><th style="width: 20%"><div><span>File / Directory</span></div></th>
 <th colspan="2"><div><span>Mutation score</span></div></th>
@@ -72,7 +72,7 @@ export default ({ getState, dispatch }) =&gt; next =&gt; (action) =&gt; </span><
     const { type, payload } = action;
     const result = next(action);
     const state = getState();
-    if (</span><a href="#" class="stryker-mutant-button" tabindex="0" title="IfStatement" data-content="status: Survived" data-mutant-status-annotation="danger" data-mutant-status="2" data-mutant="12"><span class="badge badge-danger">12</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="12">false</span><a href="#" class="stryker-mutant-button" tabindex="0" title="PrefixUnaryExpression" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="13"><span class="badge badge-success">13</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="13">isGameStarted(state)</span><a href="#" class="stryker-mutant-button" tabindex="0" title="IfStatement" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="14"><span class="badge badge-success">14</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="14">true</span><span class="stryker-original-code" data-mutant="12"><span class="stryker-original-code" data-mutant="13"><span class="stryker-original-code" data-mutant="14"><span class="bg-danger-light">!isGameStarted(state)</span></span></span></span><span class="bg-success-light">) </span><a href="#" class="stryker-mutant-button" tabindex="0" title="Block" data-content="status: Survived" data-mutant-status-annotation="danger" data-mutant-status="2" data-mutant="15"><span class="badge badge-danger">15</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="15">{}</span><span class="stryker-original-code" data-mutant="15"><span class="bg-danger-light">{
+    if (</span><a href="#" class="stryker-mutant-button" tabindex="0" title="IfStatement" data-content="status: Survived" data-mutant-status-annotation="danger" data-mutant-status="2" data-mutant="12"><span class="badge badge-danger">12</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="12">false</span><a href="#" class="stryker-mutant-button" tabindex="0" title="IfStatement" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="13"><span class="badge badge-success">13</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="13">true</span><a href="#" class="stryker-mutant-button" tabindex="0" title="PrefixUnaryExpression" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="14"><span class="badge badge-success">14</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="14">isGameStarted(state)</span><span class="stryker-original-code" data-mutant="12"><span class="stryker-original-code" data-mutant="13"><span class="stryker-original-code" data-mutant="14"><span class="bg-danger-light">!isGameStarted(state)</span></span></span></span><span class="bg-success-light">) </span><a href="#" class="stryker-mutant-button" tabindex="0" title="Block" data-content="status: Survived" data-mutant-status-annotation="danger" data-mutant-status="2" data-mutant="15"><span class="badge badge-danger">15</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="15">{}</span><span class="stryker-original-code" data-mutant="15"><span class="bg-danger-light">{
         return result;
     }</span></span><span class="bg-success-light">
     switch (type) {
@@ -96,7 +96,7 @@ export default ({ getState, dispatch }) =&gt; next =&gt; (action) =&gt; </span><
         const { sign } = payload;
         const values = getBoardValues(state);
         const nextMove = makeARandomMove(values);
-        if (</span><a href="#" class="stryker-mutant-button" tabindex="0" title="IfStatement" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="29"><span class="badge badge-success">29</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="29">true</span><a href="#" class="stryker-mutant-button" tabindex="0" title="IfStatement" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="30"><span class="badge badge-success">30</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="30">false</span><a href="#" class="stryker-mutant-button" tabindex="0" title="BinaryExpression" data-content="status: Survived" data-mutant-status-annotation="danger" data-mutant-status="2" data-mutant="31"><span class="badge badge-danger">31</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="31">nextMove &gt; 0</span><a href="#" class="stryker-mutant-button" tabindex="0" title="BinaryExpression" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="32"><span class="badge badge-success">32</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="32">nextMove &lt; 0</span><span class="stryker-original-code" data-mutant="29"><span class="stryker-original-code" data-mutant="30"><span class="stryker-original-code" data-mutant="31"><span class="stryker-original-code" data-mutant="32"><span class="bg-danger-light">nextMove &gt;= 0</span></span></span></span></span><span class="bg-success-light">) </span><a href="#" class="stryker-mutant-button" tabindex="0" title="Block" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="33"><span class="badge badge-success">33</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="33">{}</span><span class="stryker-original-code" data-mutant="33"><span class="bg-success-light">{
+        if (</span><a href="#" class="stryker-mutant-button" tabindex="0" title="IfStatement" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="29"><span class="badge badge-success">29</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="29">false</span><a href="#" class="stryker-mutant-button" tabindex="0" title="IfStatement" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="30"><span class="badge badge-success">30</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="30">true</span><a href="#" class="stryker-mutant-button" tabindex="0" title="BinaryExpression" data-content="status: Survived" data-mutant-status-annotation="danger" data-mutant-status="2" data-mutant="31"><span class="badge badge-danger">31</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="31">nextMove &gt; 0</span><a href="#" class="stryker-mutant-button" tabindex="0" title="BinaryExpression" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="32"><span class="badge badge-success">32</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="32">nextMove &lt; 0</span><span class="stryker-original-code" data-mutant="29"><span class="stryker-original-code" data-mutant="30"><span class="stryker-original-code" data-mutant="31"><span class="stryker-original-code" data-mutant="32"><span class="bg-danger-light">nextMove &gt;= 0</span></span></span></span></span><span class="bg-success-light">) </span><a href="#" class="stryker-mutant-button" tabindex="0" title="Block" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="33"><span class="badge badge-success">33</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="33">{}</span><span class="stryker-original-code" data-mutant="33"><span class="bg-success-light">{
             // we have an available move
             dispatchMachineMove(
                 dispatch, sign, getPlayer1Type(state), getPlayer1Symbol(state), nextMove,
@@ -228,14 +228,6 @@ export default ({ getState, dispatch }) =&gt; next =&gt; (action) =&gt; </span><
 <td><code>!    ...    )</code></td>
 <td><code></code></td></tr>
 <tr><th>13</th>
-<td>PrefixUnaryExpression</td>
-<td>Killed</td>
-<td>22
-:
-8</td>
-<td><code>!    ...    )</code></td>
-<td><code>(     )</code></td></tr>
-<tr><th>14</th>
 <td>IfStatement</td>
 <td>Killed</td>
 <td>22
@@ -243,6 +235,14 @@ export default ({ getState, dispatch }) =&gt; next =&gt; (action) =&gt; </span><
 8</td>
 <td><code>!    ...    )</code></td>
 <td><code></code></td></tr>
+<tr><th>14</th>
+<td>PrefixUnaryExpression</td>
+<td>Killed</td>
+<td>22
+:
+8</td>
+<td><code>!    ...    )</code></td>
+<td><code>(     )</code></td></tr>
 <tr><th>15</th>
 <td>Block</td>
 <td>Survived</td>

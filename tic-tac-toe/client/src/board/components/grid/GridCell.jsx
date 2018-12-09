@@ -13,7 +13,7 @@ const GridCell = ({
     highlight,
 }) => (
     <Cell highlight={highlight} type={value}>
-        <Sign hasValue={valid} type={valid ? value : playingType} onClick={() => onClick(index)} />
+        <Sign className={`cell-${index}`} hasValue={valid} type={valid ? value : playingType} onClick={() => onClick(index)} />
     </Cell>
 );
 

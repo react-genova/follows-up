@@ -12,9 +12,10 @@ exports[`Board conatiner renders without crashing and fires correct moving actio
       type="MOVING_SYMBOL_X"
     >
       <div
-        class="sc-htpNat emEaka"
+        class="cell-0 sc-htpNat emEaka"
       >
         <svg
+          class="sign-x"
           height="100%"
           viewBox="0 0 100 100"
           width="100%"
@@ -43,9 +44,10 @@ exports[`Board conatiner renders without crashing and fires correct moving actio
       type="MOVING_SYMBOL_O"
     >
       <div
-        class="sc-htpNat emEaka"
+        class="cell-1 sc-htpNat emEaka"
       >
         <svg
+          class="sign-o"
           height="100%"
           viewBox="0 0 100 100"
           width="100%"
@@ -67,9 +69,10 @@ exports[`Board conatiner renders without crashing and fires correct moving actio
       type="MOVING_SYMBOL_X"
     >
       <div
-        class="sc-htpNat emEaka"
+        class="cell-2 sc-htpNat emEaka"
       >
         <svg
+          class="sign-x"
           height="100%"
           viewBox="0 0 100 100"
           width="100%"
@@ -98,7 +101,7 @@ exports[`Board conatiner renders without crashing and fires correct moving actio
       type="NONE"
     >
       <div
-        class="sc-htpNat emEaka"
+        class="cell-3 sc-htpNat emEaka"
       />
     </div>
   </div>

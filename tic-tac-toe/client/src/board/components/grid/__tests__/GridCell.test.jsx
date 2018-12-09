@@ -27,7 +27,7 @@ describe('GridCell component', () => {
                 highlight={false}
             />,
         );
-        fireEvent.click(container.firstChild.firstChild);
+        fireEvent.click(container.querySelector(`.cell-${INDEX}`));
         expect(onClick).toHaveBeenCalledTimes(1);
         expect(onClick).toHaveBeenCalledWith(INDEX);
     });
